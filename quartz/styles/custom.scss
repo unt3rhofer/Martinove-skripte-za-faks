@@ -1,3 +1,126 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
+/*
+ * Quartz 5 adaptation of the supplied Obsidian callouts CSS.
+ * Source: Obsidian custom callouts.
+ * Keep this file at quartz/styles/custom.scss.
+ *
+ * Quartz uses --color, --border, --bg and --callout-icon.
+ * The original --callout-color and lucide-* names are Obsidian-only.
+ * No Obsidian editor or embed-alignment rules are included.
+ * The original zaokruzeno/uokvireno rules are preserved unchanged.
+ */
+
+/* Lucide book-open icon */
+.callout {
+  --math-callout-icon-book-open: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M12%207v14%22%2F%3E%3Cpath%20d%3D%22M3%2018V5a2%202%200%200%201%202-2h3a4%204%200%200%201%204%204%204%204%200%200%201%204-4h3a2%202%200%200%201%202%202v13a1%201%200%200%201-1%201h-4a4%204%200%200%200-4%204%204%204%200%200%200-4-4H4a1%201%200%200%201-1-1z%22%2F%3E%3C%2Fsvg%3E");
+}
+
+/* Lucide highlighter icon */
+.callout {
+  --math-callout-icon-highlighter: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22m9%2011-6%206v3h9l3-3%22%2F%3E%3Cpath%20d%3D%22m22%2012-4-4a2.828%202.828%200%200%200-4%200l-6%206%208%208%206-6a2.828%202.828%200%200%200%200-4z%22%2F%3E%3C%2Fsvg%3E");
+}
+
+/* Lucide star icon */
+.callout {
+  --math-callout-icon-star: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22m12%202%203.09%206.26L22%209.27l-5%204.87%201.18%206.88L12%2017.77l-6.18%203.25L7%2014.14%202%209.27l6.91-1.01z%22%2F%3E%3C%2Fsvg%3E");
+}
+
+/* Lucide pencil icon */
+.callout {
+  --math-callout-icon-pencil: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M12%2020h9%22%2F%3E%3Cpath%20d%3D%22M16.5%203.5a2.121%202.121%200%200%201%203%203L7%2019l-4%201%201-4Z%22%2F%3E%3C%2Fsvg%3E");
+}
+
+/* Lucide zoom-in icon */
+.callout {
+  --math-callout-icon-zoom-in: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2211%22%20cy%3D%2211%22%20r%3D%228%22%2F%3E%3Cpath%20d%3D%22m21%2021-4.35-4.35%22%2F%3E%3Cpath%20d%3D%22M11%208v6%22%2F%3E%3Cpath%20d%3D%22M8%2011h6%22%2F%3E%3C%2Fsvg%3E");
+}
+
+/* Definicija (orange) */
+.callout[data-callout="definicija"] {
+  --color: rgb(251, 146, 60);
+  --border: rgba(251, 146, 60, 0.27);
+  --bg: rgba(251, 146, 60, 0.10);
+  --callout-icon: var(--math-callout-icon-book-open);
+}
+
+/* Istaknuto (blue) */
+.callout[data-callout="istaknuto"] {
+  --color: rgb(96, 165, 250);
+  --border: rgba(96, 165, 250, 0.27);
+  --bg: rgba(96, 165, 250, 0.10);
+  --callout-icon: var(--math-callout-icon-highlighter);
+}
+
+/* Bitna tvrdnja (red) */
+.callout[data-callout="bitnatvrdnja"] {
+  --color: rgb(248, 113, 113);
+  --border: rgba(248, 113, 113, 0.27);
+  --bg: rgba(248, 113, 113, 0.10);
+  --callout-icon: var(--math-callout-icon-star);
+}
+
+/* Dokaz / Rješenje / Odgovor (purple) */
+.callout[data-callout="dokaz"],
+.callout[data-callout="rjesenje"],
+.callout[data-callout="odgovor"] {
+  --color: rgb(167, 139, 250);
+  --border: rgba(167, 139, 250, 0.27);
+  --bg: rgba(167, 139, 250, 0.10);
+  --callout-icon: var(--math-callout-icon-pencil);
+}
+
+/* Objašnjenje / Opširnije / Detaljnije (green) */
+.callout[data-callout="objasnjenje"],
+.callout[data-callout="opsirnije"],
+.callout[data-callout="detaljnije"] {
+  --color: rgb(74, 222, 128);
+  --border: rgba(74, 222, 128, 0.27);
+  --bg: rgba(74, 222, 128, 0.10);
+  --callout-icon: var(--math-callout-icon-zoom-in);
+}
+
+/* Zaokruzeno / Uokvireno: transparent fill, 1px white border,
+   and no visible title, as in the original Obsidian CSS.
+   Note: do not use the +/- fold syntax for these types, since their
+   title (and hence the fold toggle) is intentionally hidden. */
+.callout[data-callout="zaokruzeno"],
+.callout[data-callout="uokvireno"] {
+  --color: #fff;
+  --border: #fff;
+  --bg: transparent;
+  background-color: transparent;
+  border: 1px solid #fff;
+  box-shadow: none;
+  mix-blend-mode: normal;
+  padding: 0.85rem 1rem;
+}
+
+.callout[data-callout="zaokruzeno"] > .callout-title,
+.callout[data-callout="uokvireno"] > .callout-title {
+  display: none;
+}
+
+/* Explicitly apply the fill and border to the colored custom callouts.
+   Defining --bg alone only stores a value; background-color paints it.
+   Keep Quartz's native spacing and the original framed callouts unchanged. */
+.callout:is(
+  [data-callout="definicija"],
+  [data-callout="istaknuto"],
+  [data-callout="bitnatvrdnja"],
+  [data-callout="dokaz"],
+  [data-callout="rjesenje"],
+  [data-callout="odgovor"],
+  [data-callout="objasnjenje"],
+  [data-callout="opsirnije"],
+  [data-callout="detaljnije"]
+) {
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+}
+
+/* Fix collapsed callouts containing complex Markdown or LaTeX */
+
+.callout.is-collapsed > .callout-content {
+  display: none !important;
+}
