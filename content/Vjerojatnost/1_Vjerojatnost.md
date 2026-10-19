@@ -1,4 +1,7 @@
-# 1.2. Vjerojatnosni prostor $(\Omega,\mathcal F,P)$
+---
+title: 1 Vjerojatnost
+---
+# Vjerojatnosni prostor
 **Vjerojatnosni prostor** je matematički model za dani pokus.
 Sastoji se od tri komponente:
 
@@ -13,7 +16,7 @@ $$
 - elemente iz $\mathcal F$ zovemo **događaji**
 
 (iii) vjerojatnost koju pridružujemo svakom događaju, $P(\cdot)$
-## 1.2.1. Događaji
+## Događaji
 
 Događaj $A\in\mathcal F$ se **dogodio** ako se dogodio ishod $\omega\in\Omega$ takav da je $\omega\in A$.
 
@@ -38,6 +41,7 @@ Za $A,B\in\mathcal F$:
 > \varnothing &\rightarrow \text{„nemoguć događaj”}
 > \end{aligned}
 > $$
+
 
 > [!definicija] $\sigma$-algebra
 > Neka je $\mathcal F$ familija podskupova od $\Omega$.
@@ -65,7 +69,6 @@ Za $A,B\in\mathcal F$:
 > $$
 
 
-### Napomena 1.3.
 > [!istaknuto] Svojstva $\sigma$-algebre
 > Ako je $\mathcal F$ $\sigma$-algebra, vrijedi i:
 >
@@ -144,7 +147,7 @@ Za $A,B\in\mathcal F$:
 > \bigcap_{j=1}^{\infty}A_j\in\mathcal F.
 > $$
 
-## 1.2.2. Definicija vjerojatnosti i osnovna svojstva
+## Definicija vjerojatnosti i osnovna svojstva
 
 > [!definicija] Kolmogorovljevi aksiomi
 > Vjerojatnost na $(\Omega,\mathcal F)$ je svaka funkcija
@@ -177,7 +180,6 @@ Za $A,B\in\mathcal F$:
 > $$
 
 
-### Napomena 1.6.
 > [!istaknuto] Svojstva vjerojatnosti
 > (i)
 >
@@ -299,7 +301,6 @@ Za $A,B\in\mathcal F$:
 > $$
 > \mathbb{P}(A)\in[0,1].
 > $$
-### Primjer 1.7. — Laplaceov model
 
 Ako je $|\Omega|<\infty$ te su zbog simetrije svi $\omega\in\Omega$ jednako vjerojatni:
 
@@ -315,8 +316,6 @@ $$
 \mathcal F=\mathcal P(\Omega).
 $$
 
-### Primjer 1.8. — Geometrijska vjerojatnost
-
 > [!istaknuto] Geometrijska vjerojatnost
 > $$
 > P(A)=\frac{\lambda(A)}{\lambda(\Omega)},
@@ -325,8 +324,6 @@ $$
 
 - $\Omega$ $\rightarrow$ neki skup s površinom
 - $\mathcal F$ $\rightarrow$ Borelova $\sigma$-algebra
-
-### Propozicija 1.9.
 
 > [!istaknuto] Osnovna svojstva vjerojatnosti
 > **(a)**
@@ -514,7 +511,7 @@ $$
 
 
 
-## 1.2.3. Diskretan vjerojatnosni prostor
+## Diskretan vjerojatnosni prostor
 
 Neka je $\Omega$ konačan ili prebrojiv, $\mathcal F=\mathcal P(\Omega)$ te $P$ vjerojatnost na $(\Omega,\mathcal F)$.
 
@@ -539,8 +536,6 @@ Za svaki $A\in\mathcal F$ vrijedi
 > $$
 
 
-### Primjer 1.11.
-
 Ako je $\Omega$ prebrojivo beskonačan, nije moguće uspostaviti Laplaceov model.
 
 To slijedi iz nenegativnosti vjerojatnosti i činjenice da mora vrijediti
@@ -557,8 +552,6 @@ $$
 
 za sve $i,j$.
 
-
-### Propozicija 1.12.
 
 > [!istaknuto]
 > Neka je
@@ -606,9 +599,8 @@ za sve $i,j$.
 > Time su automatski određene vjerojatnosti svih događaja.
 
 
-# 1.3. Laplaceov model
-## 1.3.1. Formula uključivanja-isključivanja
-### Propozicija 1.16 
+# Laplaceov model
+## Formula uključivanja-isključivanja
 
 Neka je $n\in\mathbb N$ i $A_1,\ldots,A_n\in\mathcal F$. Tada
 
@@ -759,9 +751,8 @@ Neka je $n\in\mathbb N$ i $A_1,\ldots,A_n\in\mathcal F$. Tada
 > $$
 
 
-# 1.4. Nizovi događaja
-## 1.4.1. Subaditivnost
-### Propozicija 1.18 — subaditivnost vjerojatnosti
+# Nizovi događaja
+## Subaditivnost
 
 Neka je $(A_j)_{j\in\mathbb N}$ niz događaja iz $\mathcal F$. Tada vrijedi
 
@@ -868,7 +859,7 @@ To svojstvo nazivamo **konačna subaditivnost**.
 >![](file:///home/martin/Documents/Obsidian/Martin/90%20Attachments/prop118.png.png)
 
 
-## 1.4.2. Neprekidnost vjerojatnosti
+## Neprekidnost vjerojatnosti
 
 > [!definicija] Rastući i padajući niz događaja
 > Za niz događaja $A_1,A_2,\ldots\in\mathcal F$ kažemo da je
@@ -876,8 +867,6 @@ To svojstvo nazivamo **konačna subaditivnost**.
 > - **rastući** ako je $A_n\subseteq A_{n+1}$ za sve $n\in\mathbb N$,
 > - **padajući** ako je $A_{n+1}\subseteq A_n$ za sve $n\in\mathbb N$.
 
-
-### Propozicija 1.22. (Neprekidnost vjerojatnosti s obzirom na rastući/padajući niz događaja)
 
 (a) Ako je niz $A_1,A_2,\ldots\in\mathcal F$ rastući, vrijedi
 
@@ -981,7 +970,7 @@ To svojstvo nazivamo **konačna subaditivnost**.
 
 
 
-## 1.4.3. $(\Omega, \mathcal{F}, \mathbb{P})$ za beskonačan niz bacanja novčića
+## Vjerojatnosni prostor za beskonačan niz bacanja novčića
 
 
 > [!istaknuto] Beskonačan niz bacanja novčića
@@ -998,14 +987,28 @@ To svojstvo nazivamo **konačna subaditivnost**.
 
 
 Uočimo da je $\Omega$ **neprebrojiv** skup!
+
 => nije dovoljno zadati $\mathbb(P)(\omega)$ za svaki niz $\omega$
 
 Motivacija za uvođenje beskonačnog niza bacanja novčića je mogućnost preciznog opisivanja događaja koji ovise o proizvoljno velikom broju bacanja.
 
 Kažemo da događaj $A$ **ovisi o prvih $n$ bacanja** ako za odluku je li se $A$ dogodio trebamo pogledati samo prvih $n$ rezultata; sve nakon toga je nebitno. 
+
 Na primjer, neka je 
-$$ A=\{\text{točno jedno pismo u prva 3 bacanja}\}. $$Tada $A$ ovisi o prva 3 bacanja jer nakon što znamo prva tri rezultata, odmah znamo je li se $A$ dogodio. Povoljni početci su $$ PGG,\qquad GPG,\qquad GGP. $$ Nakon toga može slijediti bilo što. 
-Formalni zapis $$ A=\{(a_1,a_2,\ldots)\in\Omega:(a_1,\ldots,a_n)\in A_n\} $$
+$$ A=\{\text{točno jedno pismo u prva 3 bacanja}\}. $$
+
+Tada $A$ ovisi o prva 3 bacanja jer nakon što znamo prva tri rezultata, odmah znamo je li se $A$ dogodio. 
+
+Povoljni početci su 
+
+$$ PGG,\qquad GPG,\qquad GGP. $$ 
+
+Nakon toga može slijediti bilo što. 
+
+Formalni zapis 
+
+$$ A=\{(a_1,a_2,\ldots)\in\Omega:(a_1,\ldots,a_n)\in A_n\} $$
+
 znači: pogledamo prvih $n$ simbola; ako taj početak pripada skupu dopuštenih početaka $A_n$, cijeli beskonačni niz pripada događaju $A$.
 
 Ako je $A_n=\{\text{u }n\text{-tom bacanju palo je pismo}\}$, tada
