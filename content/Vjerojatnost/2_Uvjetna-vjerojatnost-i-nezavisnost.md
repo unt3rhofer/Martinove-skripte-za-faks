@@ -1,5 +1,5 @@
 ---
-title: 2 Uvjetna verojatnost i nezavisnost
+title: 2 Uvjetna vjerojatnost i nezavisnost
 ---
 ## Uvjetna vjerojatnost
 
@@ -71,17 +71,17 @@ $$
 
 
 > [!definicija] Uvjetna vjerojatnost
-> Neka je $(\Omega,\mathcal F,P)$ proizvoljan vjerojatnosni prostor. Ako $B\in\mathcal F$ zadovoljava $P(B)>0$, za sve $A\in\mathcal F$ definiramo
+> Neka je $(\Omega,\mathcal F,\mathbb{P})$ proizvoljan vjerojatnosni prostor. Ako $B\in\mathcal F$ zadovoljava $\mathbb{P}(B)>0$, za sve $A\in\mathcal F$ definiramo
 >
 > $$
-> P(A\mid B):=\frac{P(A\cap B)}{P(B)}.
+> \mathbb{P}(A\mid B):=\frac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)}.
 > $$
 >
 >
 > Vrijedi
 >
 > $$
-> \mathbb{P}((A\cap B)=P(A\mid B)\mathbb{P}((B).
+> \mathbb{P}(A\cap B)=\mathbb{P}(A\mid B)\mathbb{P}(B).
 > $$
 
 Neka je $(\Omega,\mathcal F,\mathbb P)$ vjerojatnosni prostor i $C\in\mathcal F$ takav da je $\mathbb P(C)>0$. Tada je funkcija
@@ -288,21 +288,21 @@ $$
 > Neka su $A_j\in\mathcal F$, $j=1,\ldots,n$, takvi da je
 >
 > $$
-> P(A_1\cap\cdots\cap A_{n-1})>0.
+> \mathbb{P}(A_1\cap\cdots\cap A_{n-1})>0.
 > $$
 >
 > Tada vrijedi
 >
 > $$
 > \begin{aligned}
-> P(A_1\cap A_2\cap\cdots\cap A_n)
+> \mathbb{P}(A_1\cap A_2\cap\cdots\cap A_n)
 > &=
-> P(A_1)
-> P(A_2\mid A_1)
-> P(A_3\mid A_1\cap A_2)
+> \mathbb{P}(A_1)
+> \mathbb{P}(A_2\mid A_1)
+> \mathbb{P}(A_3\mid A_1\cap A_2)
 > \cdots\\
 > &\qquad\cdots
-> P(A_n\mid A_1\cap\cdots\cap A_{n-1}).
+> \mathbb{P}(A_n\mid A_1\cap\cdots\cap A_{n-1}).
 > \end{aligned}
 > $$
 
@@ -311,20 +311,20 @@ $$
 >
 > $$
 > \begin{aligned}
-> &P(A_1)
-> P(A_2\mid A_1)
-> P(A_3\mid A_1\cap A_2)
+> &\mathbb{P}(A_1)
+> \mathbb{P}(A_2\mid A_1)
+> \mathbb{P}(A_3\mid A_1\cap A_2)
 > \cdots
-> P(A_n\mid A_1\cap\cdots\cap A_{n-1})
+> \mathbb{P}(A_n\mid A_1\cap\cdots\cap A_{n-1})
 > \\[4pt]
 > &=
-> P(A_1)
-> \frac{P(A_1\cap A_2)}{P(A_1)}
-> \frac{P(A_1\cap A_2\cap A_3)}
-> {P(A_1\cap A_2)}
+> \mathbb{P}(A_1)
+> \frac{\mathbb{P}(A_1\cap A_2)}{\mathbb{P}(A_1)}
+> \frac{\mathbb{P}(A_1\cap A_2\cap A_3)}
+> {\mathbb{P}(A_1\cap A_2)}
 > \cdots
-> \frac{P(A_1\cap\cdots\cap A_n)}
-> {P(A_1\cap\cdots\cap A_{n-1})}.
+> \frac{\mathbb{P}(A_1\cap\cdots\cap A_n)}
+> {\mathbb{P}(A_1\cap\cdots\cap A_{n-1})}.
 > \end{aligned}
 > $$
 >
@@ -333,28 +333,26 @@ $$
 > $$
 > \require{cancel}
 > \begin{aligned}
-> &\cancel{P(A_1)}
+> &\cancel{\mathbb{P}(A_1)}
 > \cdot
-> \frac{\cancel{P(A_1\cap A_2)}}{\cancel{P(A_1)}}
+> \frac{\cancel{\mathbb{P}(A_1\cap A_2)}}{\cancel{\mathbb{P}(A_1)}}
 > \cdot
-> \frac{\cancel{P(A_1\cap A_2\cap A_3)}}
-> {\cancel{P(A_1\cap A_2)}}
+> \frac{\cancel{\mathbb{P}(A_1\cap A_2\cap A_3)}}
+> {\cancel{\mathbb{P}(A_1\cap A_2)}}
 > \cdots\\
 > &\qquad\cdots
-> \frac{\cancel{P(A_1\cap\cdots\cap A_{n-1})}}
-> {\cancel{P(A_1\cap\cdots\cap A_{n-2})}}
+> \frac{\cancel{\mathbb{P}(A_1\cap\cdots\cap A_{n-1})}}
+> {\cancel{\mathbb{P}(A_1\cap\cdots\cap A_{n-2})}}
 > \cdot
-> \frac{P(A_1\cap\cdots\cap A_n)}
-> {\cancel{P(A_1\cap\cdots\cap A_{n-1})}}
+> \frac{\mathbb{P}(A_1\cap\cdots\cap A_n)}
+> {\cancel{\mathbb{P}(A_1\cap\cdots\cap A_{n-1})}}
 > \\[4pt]
 > &=
-> P(A_1\cap\cdots\cap A_n).
+> \mathbb{P}(A_1\cap\cdots\cap A_n).
 > \end{aligned}
 > $$
 >
 > Time je tvrdnja dokazana.
-
-
 
 ## Nezavisnost
 
@@ -479,12 +477,12 @@ $$
 >
 > $$
 > \begin{aligned}
-> P(A^c\cap B)
-> &=P(B\setminus A)\\
-> &=P(B)-P(A\cap B)\\
-> &\overset{\text{nezavisnost}}{=}P(B)-P(A)P(B)\\
-> &=P(B)(1-P(A))\\
-> &=P(B)P(A^c).
+> \mathbb{P}(A^c\cap B)
+> &=\mathbb{P}(B\setminus A)\\
+> &=\mathbb{P}(B)-\mathbb{P}(A\cap B)\\
+> &\overset{\text{nezavisnost}}{=}\mathbb{P}(B)-\mathbb{P}(A)\mathbb{P}(B)\\
+> &=\mathbb{P}(B)(1-\mathbb{P}(A))\\
+> &=\mathbb{P}(B)\mathbb{P}(A^c).
 > \end{aligned}
 > $$
 >
@@ -494,12 +492,12 @@ $$
 >
 > $$
 > \begin{aligned}
-> P(A\cap B^c)
-> &=P(A\setminus B)\\
-> &=P(A)-P(A\cap B)\\
-> &\overset{\text{nezavisnost}}{=}P(A)-P(A)P(B)\\
-> &=P(A)(1-P(B))\\
-> &=P(A)P(B^c).
+> \mathbb{P}(A\cap B^c)
+> &=\mathbb{P}(A\setminus B)\\
+> &=\mathbb{P}(A)-\mathbb{P}(A\cap B)\\
+> &\overset{\text{nezavisnost}}{=}\mathbb{P}(A)-\mathbb{P}(A)\mathbb{P}(B)\\
+> &=\mathbb{P}(A)(1-\mathbb{P}(B))\\
+> &=\mathbb{P}(A)\mathbb{P}(B^c).
 > \end{aligned}
 > $$
 >
@@ -509,84 +507,82 @@ $$
 >
 > $$
 > \begin{aligned}
-> P(A^c\cap B^c)
-> &=P((A\cup B)^c)\\
-> &=1-P(A\cup B)\\
-> &=1-\bigl(P(A)+P(B)-P(A\cap B)\bigr)\\
+> \mathbb{P}(A^c\cap B^c)
+> &=\mathbb{P}((A\cup B)^c)\\
+> &=1-\mathbb{P}(A\cup B)\\
+> &=1-\bigl(\mathbb{P}(A)+\mathbb{P}(B)-\mathbb{P}(A\cap B)\bigr)\\
 > &\overset{\text{nezavisnost}}{=}
-> 1-\bigl(P(A)+P(B)-P(A)P(B)\bigr)\\
-> &=1-\bigl(P(A)(1-P(B))+P(B)\bigr)\\
-> &=1-P(A)P(B^c)-P(B)\\
-> &=1-P(B)-P(A)P(B^c)\\
-> &=P(B^c)-P(A)P(B^c)\\
-> &=P(B^c)(1-P(A))\\
-> &=P(A^c)P(B^c).
+> 1-\bigl(\mathbb{P}(A)+\mathbb{P}(B)-\mathbb{P}(A)\mathbb{P}(B)\bigr)\\
+> &=1-\bigl(\mathbb{P}(A)(1-\mathbb{P}(B))+\mathbb{P}(B)\bigr)\\
+> &=1-\mathbb{P}(A)\mathbb{P}(B^c)-\mathbb{P}(B)\\
+> &=1-\mathbb{P}(B)-\mathbb{P}(A)\mathbb{P}(B^c)\\
+> &=\mathbb{P}(B^c)-\mathbb{P}(A)\mathbb{P}(B^c)\\
+> &=\mathbb{P}(B^c)(1-\mathbb{P}(A))\\
+> &=\mathbb{P}(A^c)\mathbb{P}(B^c).
 > \end{aligned}
 > $$
 >
 > Dakle, $A^c$ i $B^c$ su nezavisni.
-
 
 ### Nezavisnost familije događaja
 
 > [!definicija] Nezavisnost familije događaja
 > Familija događaja $(A_i)_{i\in I}$ pri čemu $I$ može biti proizvoljan skup, je
 >
-> (i) **nezavisna** ako vrijedi
+> **(i)** **nezavisna** ako vrijedi
 >
 > $$
-> P\left(\bigcap_{i\in F} A_i\right)
+> \mathbb{P}\left(\bigcap_{i\in F} A_i\right)
 > =
-> \prod_{i\in F} P(A_i),
+> \prod_{i\in F} \mathbb{P}(A_i),
 > $$
 >
 > za svaki konačan i neprazan podskup $F\subseteq I$.
 >
-> (ii) **uvjetno nezavisna uz dano** $C\in\mathcal F$, $P(C)>0$, ako je nezavisna [u smislu definicije (i)] s obzirom na $P_C$.
+> **(ii)** **uvjetno nezavisna uz dano** $C\in\mathcal F$, $\mathbb{P}(C)>0$, ako je nezavisna [u smislu definicije (i)] s obzirom na $\mathbb{P}_C$.
 >
-> (iii) **u parovima nezavisna** ako su $A_i$ i $A_j$ nezavisni za sve $i,j\in I$, $i\neq j$.
+> **(iii)** **u parovima nezavisna** ako su $A_i$ i $A_j$ nezavisni za sve $i,j\in I$, $i\neq j$.
 >
- 
+
  Na primjer, $A,B,C\in\mathcal F$ su nezavisni ako vrijedi
 
- 1. $P(A\cap B)=P(A)P(B)$, $P(A\cap C)=P(A)P(C)$, $P(B\cap C)=P(B)P(C)$,
+ 1. $\mathbb{P}(A\cap B)=\mathbb{P}(A)\mathbb{P}(B)$, $\mathbb{P}(A\cap C)=\mathbb{P}(A)\mathbb{P}(C)$, $\mathbb{P}(B\cap C)=\mathbb{P}(B)\mathbb{P}(C)$,
 
  te još
 
- 2. $P(A\cap B\cap C)=P(A)P(B)P(C)$.
+ 2. $\mathbb{P}(A\cap B\cap C)=\mathbb{P}(A)\mathbb{P}(B)\mathbb{P}(C)$.
 
 Zašto ne samo 2?
 > [!odgovor]- Odgovor.
 > Uzmite na primjer $C=\emptyset$, onda bi za sve $A,B$ imali da su $A,B,C$ nezavisni što očito nema smisla.
 
-
 > [!istaknuto] Karakterizacija nezavisnosti familije događaja
 > Ako su $(A_i)_{i\in I}$ nezavisni, vrijedi
 >
 > $$
-> P\left(
+> \mathbb{P}\left(
 > \left.
 > \bigcap_{i\in F_2} A_i
 > \,\right|\,
 > \bigcap_{j\in F_1} A_j
 > \right)
 > =
-> P\left(\bigcap_{i\in F_2} A_i\right)
+> \mathbb{P}\left(\bigcap_{i\in F_2} A_i\right)
 > =
-> \prod_{i\in F_2} P(A_i),
+> \prod_{i\in F_2} \mathbb{P}(A_i),
 > $$
 >
 > za sve konačne, neprazne i disjunktne podskupove $F_1,F_2\subseteq I$, pri čemu pretpostavljamo da je
 >
 > $$
-> P\left(\bigcap_{i\in F_1}A_i\right)>0.
+> \mathbb{P}\left(\bigcap_{i\in F_1}A_i\right)>0.
 > $$
 
 > [!dokaz]- Dokaz.
 > Po definiciji uvjetne vjerojatnosti,
 >
 > $$
-> P\left(
+> \mathbb{P}\left(
 > \left.
 > \bigcap_{i\in F_2}A_i
 > \,\right|\,
@@ -594,13 +590,13 @@ Zašto ne samo 2?
 > \right)
 > =
 > \frac{
-> P\left(
+> \mathbb{P}\left(
 > \bigcap_{i\in F_2}A_i
 > \cap
 > \bigcap_{j\in F_1}A_j
 > \right)
 > }{
-> P\left(\bigcap_{j\in F_1}A_j\right)
+> \mathbb{P}\left(\bigcap_{j\in F_1}A_j\right)
 > }.
 > $$
 >
@@ -609,23 +605,22 @@ Zašto ne samo 2?
 > $$
 > =
 > \frac{
-> \prod_{k\in F_1\cup F_2}P(A_k)
+> \prod_{k\in F_1\cup F_2}\mathbb{P}(A_k)
 > }{
-> \prod_{j\in F_1}P(A_j)
+> \prod_{j\in F_1}\mathbb{P}(A_j)
 > }
 > =
-> \prod_{i\in F_2}P(A_i).
+> \prod_{i\in F_2}\mathbb{P}(A_i).
 > $$
 >
 > Opet po nezavisnosti,
 >
 > $$
-> \prod_{i\in F_2}P(A_i)
+> \prod_{i\in F_2}\mathbb{P}(A_i)
 > =
-> P\left(\bigcap_{i\in F_2}A_i\right).
+> \mathbb{P}\left(\bigcap_{i\in F_2}A_i\right).
 > $$
 > Nadalje, imamo iduću napomenu koja pokazuje da naša definicija i intuitivno ima smisla.
-
 
 > [!istaknuto] Uočimo!
 > **Nezavisnost u parovima općenito ne povlači nezavisnost!**
@@ -649,33 +644,33 @@ Pokazali smo da su $A,B,C$ u parovima nezavisni, ali tvrdimo da nisu nezavisni.
 To slijedi iz
 
 $$
-P(A\mid B\cap C)
+\mathbb{P}(A\mid B\cap C)
 =
 1
 \neq
 \frac16
 =
-P(A),
+\mathbb{P}(A),
 $$
 
 što je kontradikcija s tvrdnjom da bi za nezavisne $A,B,C$ moralo vrijediti
 
 $$
-P(A\mid B\cap C)=P(A),
+\mathbb{P}(A\mid B\cap C)=\mathbb{P}(A),
 $$
 
 ili iz
 
 $$
-P(A\cap B\cap C)
+\mathbb{P}(A\cap B\cap C)
 =
-P(\{(3,4)\})
+\mathbb{P}(\{(3,4)\})
 =
 \frac1{36}
 \neq
 \frac16\cdot\frac16\cdot\frac6{36}
 =
-P(A)P(B)P(C).
+\mathbb{P}(A)\mathbb{P}(B)\mathbb{P}(C).
 $$
 
 
@@ -697,13 +692,13 @@ Dokaz se ne ispituje.
 > Ako za niz događaja $A_1,A_2,\ldots\in\mathcal F$ vrijedi
 >
 > $$
-> \sum_{i=1}^{\infty}P(A_i)<\infty,
+> \sum_{i=1}^{\infty}\mathbb{P}(A_i)<\infty,
 > $$
 >
 > onda je
 >
 > $$
-> P\left(
+> \mathbb{P}\left(
 > \bigcap_{n=1}^{\infty}
 > \bigcup_{k=n}^{\infty}A_k
 > \right)=0.
@@ -719,26 +714,26 @@ Dokaz se ne ispituje.
 > Niz $(B_n)_{n\in\mathbb N}$ je padajući, pa po neprekidnosti vjerojatnosti
 >
 > $$
-> P\left(
+> \mathbb{P}\left(
 > \bigcap_{n=1}^{\infty}\bigcup_{k=n}^{\infty}A_k
 > \right)
 > =
 > \lim_{n\to\infty}
-> P\left(\bigcup_{k=n}^{\infty}A_k\right).
+> \mathbb{P}\left(\bigcup_{k=n}^{\infty}A_k\right).
 > $$
 >
 > Po $\sigma$-subaditivnosti,
 >
 > $$
-> P\left(\bigcup_{k=n}^{\infty}A_k\right)
+> \mathbb{P}\left(\bigcup_{k=n}^{\infty}A_k\right)
 > \leq
-> \sum_{k=n}^{\infty}P(A_k).
+> \sum_{k=n}^{\infty}\mathbb{P}(A_k).
 > $$
 >
-> Kako je $\sum_{k=1}^{\infty}P(A_k)<\infty$, ostatak konvergentnog reda teži u $0$, pa
+> Kako je $\sum_{k=1}^{\infty}\mathbb{P}(A_k)<\infty$, ostatak konvergentnog reda teži u $0$, pa
 >
 > $$
-> P\left(
+> \mathbb{P}\left(
 > \bigcap_{n=1}^{\infty}\bigcup_{k=n}^{\infty}A_k
 > \right)=0.
 > $$
@@ -746,9 +741,9 @@ Dokaz se ne ispituje.
  Prva Borel–Cantellijeva lema kaže:
 
  $$
- \sum_{i=1}^{\infty} P(A_i) < \infty
+ \sum_{i=1}^{\infty} \mathbb{P}(A_i) < \infty
  \implies
- P\left(
+ \mathbb{P}\left(
  \bigcap_{n=1}^{\infty}
  \bigcup_{k=n}^{\infty} A_k
  \right)
@@ -799,18 +794,17 @@ Dokaz se ne ispituje.
  $$
 
 
-
 > [!bitnatvrdnja] Druga Borel-Cantelli lema
 > Ako je $A_1,A_2,\ldots\in\mathcal F$ niz nezavisnih događaja takvih da vrijedi
 >
 > $$
-> \sum_{n=1}^{\infty}P(A_n)=\infty,
+> \sum_{n=1}^{\infty}\mathbb{P}(A_n)=\infty,
 > $$
 >
 > onda je
 >
 > $$
-> P(\{A_n\text{ b.m.p.}\})=1.
+> \mathbb{P}(\{A_n\text{ b.m.p.}\})=1.
 > $$
 
 > [!dokaz]- Dokaz.
@@ -915,7 +909,7 @@ Druga Borel–Cantellijeva lema je svojevrsni obrat prve, ali uz **dodatnu pretp
 Vrijedi
 
 $$
-\sum_{n=1}^{\infty}P(A_n)=\infty
+\sum_{n=1}^{\infty}\mathbb{P}(A_n)=\infty
 \qquad\text{i}\qquad
 (A_n)\text{ nezavisni}
 $$
@@ -923,10 +917,9 @@ $$
 povlači
 
 $$
-P(\{A_n\text{ b.m.p.}\})=1.
+\mathbb{P}(\{A_n\text{ b.m.p.}\})=1.
 $$
 
 Dakle:
 
 **Ako su događaji nezavisni i njihove se vjerojatnosti zbrajaju u beskonačno, tada će se gotovo sigurno beskonačno mnogo događaja $A_n$ dogoditi.**
-

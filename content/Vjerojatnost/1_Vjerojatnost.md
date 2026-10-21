@@ -1,22 +1,22 @@
 ---
 title: 1 Vjerojatnost
 ---
-# Vjerojatnosni prostor
+## Vjerojatnosni prostor
 **Vjerojatnosni prostor** je matematički model za dani pokus.
 Sastoji se od tri komponente:
 
-(i) skup svih mogućih ishoda pokusa, $\Omega$
+**(i)** skup svih mogućih ishoda pokusa, $\Omega$
 - elemente iz $\Omega$ zovemo **elementarni događaji**
 - $\Omega$ nazivamo **prostor el. događaja**
 
-(ii) familija podskupova od $\Omega$, $\mathcal F$
+**(ii)** familija podskupova od $\Omega$, $\mathcal F$
 $$
-\mathcal F\subseteq\mathcal P(\Omega)
+\mathcal F\subseteq\mathcal{P}(\Omega)
 $$
 - elemente iz $\mathcal F$ zovemo **događaji**
 
-(iii) vjerojatnost koju pridružujemo svakom događaju, $P(\cdot)$
-## Događaji
+**(iii)** vjerojatnost koju pridružujemo svakom događaju, $\mathbb{P}(\cdot)$
+### Događaji
 
 Događaj $A\in\mathcal F$ se **dogodio** ako se dogodio ishod $\omega\in\Omega$ takav da je $\omega\in A$.
 
@@ -147,13 +147,13 @@ Za $A,B\in\mathcal F$:
 > \bigcap_{j=1}^{\infty}A_j\in\mathcal F.
 > $$
 
-## Definicija vjerojatnosti i osnovna svojstva
+### Definicija vjerojatnosti i osnovna svojstva
 
 > [!definicija] Kolmogorovljevi aksiomi
 > Vjerojatnost na $(\Omega,\mathcal F)$ je svaka funkcija
 >
 > $$
-> P:\mathcal F\to\mathbb R
+> \mathbb{P}:\mathcal F\to\mathbb R
 > $$
 >
 > koja zadovoljava sljedeća tri aksioma:
@@ -161,22 +161,22 @@ Za $A,B\in\mathcal F$:
 > **(A1)** *nenegativnost:*
 >
 > $$
-> (\forall A\in\mathcal F)\qquad P(A)\geq0
+> (\forall A\in\mathcal F)\qquad \mathbb{P}(A)\geq0
 > $$
 >
 > **(A2)** *normiranost:*
 >
 > $$
-> P(\Omega)=1
+> \mathbb{P}(\Omega)=1
 > $$
 >
 > **(A3)** *$\sigma$-aditivnost:*  
 > ako su $A_1,A_2,\ldots\in\mathcal F$ u parovima disjunktni, onda
 >
 > $$
-> P\left(\bigcup_{j=1}^{\infty}A_j\right)
+> \mathbb{P}\left(\bigcup_{j=1}^{\infty}A_j\right)
 > =
-> \sum_{j=1}^{\infty}P(A_j).
+> \sum_{j=1}^{\infty}\mathbb{P}(A_j).
 > $$
 
 
@@ -184,18 +184,18 @@ Za $A,B\in\mathcal F$:
 > (i)
 >
 > $$
-> P(\varnothing)=0,
+> \mathbb{P}(\varnothing)=0,
 > \qquad
-> P(A)\in[0,1].
+> \mathbb{P}(A)\in[0,1].
 > $$
 >
-> (ii) *$P$ je konačno aditivna:*  
+> (ii) *$\mathbb{P}$ je konačno aditivna:*  
 > ako su $A_1,\ldots,A_n\in\mathcal F$ u parovima disjunktni, onda
 >
 > $$
-> P\left(\bigcup_{j=1}^{n}A_j\right)
+> \mathbb{P}\left(\bigcup_{j=1}^{n}A_j\right)
 > =
-> \sum_{j=1}^{n}P(A_j).
+> \sum_{j=1}^{n}\mathbb{P}(A_j).
 > $$
 
 > [!dokaz]- Dokaz.
@@ -304,9 +304,9 @@ Za $A,B\in\mathcal F$:
 
 Ako je $|\Omega|<\infty$ te su zbog simetrije svi $\omega\in\Omega$ jednako vjerojatni:
 
-> [!istaknuto] Laplaceov model
+> [!definicija] Laplaceov model
 > $$
-> P(A)=\frac{|A|}{|\Omega|},
+> \mathbb{P}(A)=\frac{|A|}{|\Omega|},
 > \qquad A\in\mathcal F.
 > $$
 
@@ -316,9 +316,9 @@ $$
 \mathcal F=\mathcal P(\Omega).
 $$
 
-> [!istaknuto] Geometrijska vjerojatnost
+> [!definicija] Geometrijska vjerojatnost
 > $$
-> P(A)=\frac{\lambda(A)}{\lambda(\Omega)},
+> \mathbb{P}(A)=\frac{\lambda(A)}{\lambda(\Omega)},
 > \qquad A\in\mathcal F.
 > $$
 
@@ -329,43 +329,43 @@ $$
 > **(a)**
 >
 > $$
-> P(\varnothing)=0.
+> \mathbb{P}(\varnothing)=0.
 > $$
 >
-> **(b)** $P$ je konačno aditivna.
+> **(b)** $\mathbb{P}$ je konačno aditivna.
 >
 > **(c)**
 >
 > $$
-> P(B\setminus A)
+> \mathbb{P}(B\setminus A)
 > =
-> P(B)-P(A\cap B).
+> \mathbb{P}(B)-\mathbb{P}(A\cap B).
 > $$
 >
 > **(d)** Ako je $A\subseteq B$, onda
 >
 > $$
-> P(B\setminus A)=P(B)-P(A)
+> \mathbb{P}(B\setminus A)=\mathbb{P}(B)-\mathbb{P}(A)
 > $$
 >
 > i
 >
 > $$
-> P(A)\leq P(B).
+> \mathbb{P}(A)\leq \mathbb{P}(B).
 > $$
 >
 > **(e)**
 >
 > $$
-> P(A^c)=1-P(A).
+> \mathbb{P}(A^c)=1-\mathbb{P}(A).
 > $$
 >
 > **(f)** Za sve $A,B\in\mathcal F$ vrijedi
 >
 > $$
-> P(A\cup B)
+> \mathbb{P}(A\cup B)
 > =
-> P(A)+P(B)-P(A\cap B).
+> \mathbb{P}(A)+\mathbb{P}(B)-\mathbb{P}(A\cap B).
 > $$
 
 > [!dokaz]- Dokaz.
@@ -378,7 +378,7 @@ $$
 > Stavimo
 >
 > $$
-> p:=P(\varnothing).
+> p:=\mathbb{P}(\varnothing).
 > $$
 >
 > Tada iz $\sigma$-aditivnosti slijedi
@@ -387,11 +387,11 @@ $$
 > \begin{aligned}
 > p
 > &=
-> P(\varnothing)\\
+> \mathbb{P}(\varnothing)\\
 > &=
-> P\left(\bigcup_{j=1}^{\infty}A_j\right)\\
+> \mathbb{P}\left(\bigcup_{j=1}^{\infty}A_j\right)\\
 > &=
-> \sum_{j=1}^{\infty}P(\varnothing)\\
+> \sum_{j=1}^{\infty}\mathbb{P}(\varnothing)\\
 > &=
 > \sum_{j=1}^{\infty}p.
 > \end{aligned}
@@ -419,13 +419,13 @@ $$
 >
 > $$
 > \begin{aligned}
-> P\left(\bigcup_{j=1}^{n}A_j\right)
+> \mathbb{P}\left(\bigcup_{j=1}^{n}A_j\right)
 > &=
-> P\left(\bigcup_{j=1}^{\infty}B_j\right)\\
+> \mathbb{P}\left(\bigcup_{j=1}^{\infty}B_j\right)\\
 > &=
-> \sum_{j=1}^{\infty}P(B_j)\\
+> \sum_{j=1}^{\infty}\mathbb{P}(B_j)\\
 > &=
-> \sum_{j=1}^{n}P(A_j).
+> \sum_{j=1}^{n}\mathbb{P}(A_j).
 > \end{aligned}
 > $$
 >
@@ -440,13 +440,13 @@ $$
 > Zato
 >
 > $$
-> P(B)=P(B\setminus A)+P(A\cap B),
+> \mathbb{P}(B)=\mathbb{P}(B\setminus A)+\mathbb{P}(A\cap B),
 > $$
 >
 > pa
 >
 > $$
-> P(B\setminus A)=P(B)-P(A\cap B).
+> \mathbb{P}(B\setminus A)=\mathbb{P}(B)-\mathbb{P}(A\cap B).
 > $$
 >
 > **(d)** Ako je $A\subseteq B$, tada je
@@ -458,13 +458,13 @@ $$
 > Prema (c),
 >
 > $$
-> P(B\setminus A)=P(B)-P(A)\geq0,
+> \mathbb{P}(B\setminus A)=\mathbb{P}(B)-\mathbb{P}(A)\geq0,
 > $$
 >
 > pa slijedi
 >
 > $$
-> P(A)\leq P(B).
+> \mathbb{P}(A)\leq \mathbb{P}(B).
 > $$
 >
 > **(e)** Budući da je
@@ -477,11 +477,11 @@ $$
 >
 > $$
 > \begin{aligned}
-> P(A^c)
+> \mathbb{P}(A^c)
 > &=
-> P(\Omega)-P(A)\\
+> \mathbb{P}(\Omega)-\mathbb{P}(A)\\
 > &=
-> 1-P(A).
+> 1-\mathbb{P}(A).
 > \end{aligned}
 > $$
 >
@@ -497,43 +497,41 @@ $$
 >
 > $$
 > \begin{aligned}
-> P(A\cup B)
+> \mathbb{P}(A\cup B)
 > &=
-> P(A\cap B)+P(A\setminus B)+P(B\setminus A)\\
+> \mathbb{P}(A\cap B)+\mathbb{P}(A\setminus B)+\mathbb{P}(B\setminus A)\\
 > &=
-> P(A\cap B)
-> +P(A)-P(A\cap B)
-> +P(B)-P(A\cap B)\\
+> \mathbb{P}(A\cap B)
+> +\mathbb{P}(A)-\mathbb{P}(A\cap B)
+> +\mathbb{P}(B)-\mathbb{P}(A\cap B)\\
 > &=
-> P(A)+P(B)-P(A\cap B).
+> \mathbb{P}(A)+\mathbb{P}(B)-\mathbb{P}(A\cap B).
 > \end{aligned}
 > $$
 
 
 
-## Diskretan vjerojatnosni prostor
+### Diskretan vjerojatnosni prostor
 
-Neka je $\Omega$ konačan ili prebrojiv, $\mathcal F=\mathcal P(\Omega)$ te $P$ vjerojatnost na $(\Omega,\mathcal F)$.
+Neka je $\Omega$ konačan ili prebrojiv, $\mathcal F=\mathcal P(\Omega)$ te $\mathbb{P}$ vjerojatnost na $(\Omega,\mathcal F)$.
 
 Za svaki $A\in\mathcal F$ vrijedi
 
 > [!bitnatvrdnja] Vjerojatnost događaja u diskretnom prostoru
 > $$
 > \begin{aligned}
-> P(A)
+> \mathbb{P}(A)
 > &=
-> P\left(\bigcup_{\omega\in A}\{\omega\}\right)\\
+> \mathbb{P}\left(\bigcup_{\omega\in A}\{\omega\}\right)\\
 > &=
-> \sum_{\omega\in A}P(\{\omega\}).
+> \sum_{\omega\in A}\mathbb{P}(\{\omega\}).
 > \end{aligned}
 > $$
 
-> [!istaknuto]
-> Svaka vjerojatnost na diskretnom vjerojatnosnom prostoru u potpunosti je određena vrijednostima
->
-> $$
-> P(\{\omega\}),\qquad \omega\in\Omega.
-> $$
+Svaka vjerojatnost na diskretnom vjerojatnosnom prostoru u potpunosti je određena vrijednostima
+$$
+\mathbb{P}(\{\omega\}),\qquad \omega\in\Omega.
+$$
 
 
 Ako je $\Omega$ prebrojivo beskonačan, nije moguće uspostaviti Laplaceov model.
@@ -541,77 +539,46 @@ Ako je $\Omega$ prebrojivo beskonačan, nije moguće uspostaviti Laplaceov model
 To slijedi iz nenegativnosti vjerojatnosti i činjenice da mora vrijediti
 
 $$
-\sum_{i=1}^{\infty}P(\{\omega_i\})=1,
+\sum_{i=1}^{\infty}\mathbb{P}(\{\omega_i\})=1,
 $$
 
-pa ne postoji vjerojatnost $P$ na $(\Omega,\mathcal F)$ takva da je
+pa ne postoji vjerojatnost $\mathbb{P}$ na $(\Omega,\mathcal F)$ takva da je
 
 $$
-P(\{\omega_i\})=P(\{\omega_j\})
+\mathbb{P}(\{\omega_i\})=\mathbb{P}(\{\omega_j\})
 $$
 
 za sve $i,j$.
 
 
-> [!istaknuto]
-> Neka je
+> [!istaknuto] Na konačnom prostoru dovoljno je zadati vjerojatnosti elementarnih događaja
+> Neka je $\Omega=\{\omega_1,\ldots,\omega_n\}$, gdje je $n\in\mathbb{N}$, te $\mathcal{F}=\mathcal{P}(\Omega)$.
+>
+> Za svaki vektor $p=(p_1,\ldots,p_n)$ koji zadovoljava uvjete
 >
 > $$
-> \Omega=\{\omega_1,\ldots,\omega_n\},
-> \qquad n\in\mathbb N,
+> p_i\geq 0, \quad (i=1,\ldots,n),
+> \qquad \sum_{i=1}^{n}p_i=1,
 > $$
 >
-> te
+> postoji vjerojatnost $\mathbb{P}$ na $(\Omega,\mathcal{F})$ takva da
 >
 > $$
-> \mathcal F=\mathcal P(\Omega).
-> $$
->
-> Za svaki vektor
->
-> $$
-> p=(p_1,\ldots,p_n)
-> $$
->
-> koji zadovoljava
->
-> $$
-> p_i\geq0,
-> \qquad i=1,\ldots,n,
-> $$
->
-> i
->
-> $$
-> \sum_{i=1}^{n}p_i=1,
-> $$
->
-> postoji vjerojatnost $P$ na $(\Omega,\mathcal F)$ takva da
->
-> $$
-> P(\{\omega_i\})=p_i,
-> \qquad i=1,\ldots,n.
+> \mathbb{P}(\{\omega_i\})=p_i,\qquad i=1,\ldots,n.
 > $$
 
-> [!istaknuto]
-> Na konačnom prostoru dovoljno je zadati vjerojatnosti pojedinačnih ishoda.
->
-> Time su automatski određene vjerojatnosti svih događaja.
+## Laplaceov model
+### Formula uključivanja-isključivanja
 
-
-# Laplaceov model
-## Formula uključivanja-isključivanja
-
-Neka je $n\in\mathbb N$ i $A_1,\ldots,A_n\in\mathcal F$. Tada
-
->[!bitnatvrdnja] FUI
+>[!bitnatvrdnja] Formula uključivanja i isključivanja — FUI
+> Neka je $n\in\mathbb N$ i $A_1,\ldots,A_n\in\mathcal F$. Tada
 >$$
->P\left(\bigcup_{i=1}^{n}A_i\right)
+>\mathbb{P}\left(\bigcup_{i=1}^{n}A_i\right)
 >=
->\sum_{i=1}^{n}P(A_i)
->-\sum_{1\le i<j\le n}P(A_i\cap A_j)
+>\sum_{i=1}^{n}\mathbb{P}(A_i)
+>-\sum_{1\le i<j\le n}\mathbb{P}(A_i\cap A_j)
 >+\cdots
->+(-1)^{n+1}P(A_1\cap\cdots\cap A_n).
+>+(-1)^{n+1}\mathbb{P}(A_1\cap\cdots\cap A_n).
 >$$
 
 > [!dokaz]- Dokaz.
@@ -620,7 +587,7 @@ Neka je $n\in\mathbb N$ i $A_1,\ldots,A_n\in\mathcal F$. Tada
 > Za $n=1$:
 >
 > $$
-> P(A_1)=P(A_1),
+> \mathbb{P}(A_1)=\mathbb{P}(A_1),
 > $$
 >
 > pa istaknuto očito vrijedi.
@@ -628,9 +595,9 @@ Neka je $n\in\mathbb N$ i $A_1,\ldots,A_n\in\mathcal F$. Tada
 > Za $n=2$:
 >
 > $$
-> P(A_1\cup A_2)
+> \mathbb{P}(A_1\cup A_2)
 > =
-> P(A_1)+P(A_2)-P(A_1\cap A_2),
+> \mathbb{P}(A_1)+\mathbb{P}(A_2)-\mathbb{P}(A_1\cap A_2),
 > $$
 >
 > što je poznata formula uključivanja-isključivanja za dva događaja.
@@ -639,13 +606,13 @@ Neka je $n\in\mathbb N$ i $A_1,\ldots,A_n\in\mathcal F$. Tada
 >
 > $$
 > \begin{aligned}
-> P\left(\bigcup_{i=1}^{n+1}A_i\right)
+> \mathbb{P}\left(\bigcup_{i=1}^{n+1}A_i\right)
 > &=
-> P\left(\left(\bigcup_{i=1}^{n}A_i\right)\cup A_{n+1}\right)\\
+> \mathbb{P}\left(\left(\bigcup_{i=1}^{n}A_i\right)\cup A_{n+1}\right)\\
 > &=
-> P\left(\bigcup_{i=1}^{n}A_i\right)
-> +P(A_{n+1})
-> -P\left(\bigcup_{i=1}^{n}(A_i\cap A_{n+1})\right).
+> \mathbb{P}\left(\bigcup_{i=1}^{n}A_i\right)
+> +\mathbb{P}(A_{n+1})
+> -\mathbb{P}\left(\bigcup_{i=1}^{n}(A_i\cap A_{n+1})\right).
 > \end{aligned}
 > $$
 >
@@ -653,15 +620,15 @@ Neka je $n\in\mathbb N$ i $A_1,\ldots,A_n\in\mathcal F$. Tada
 >
 > $$
 > \begin{aligned}
-> P\left(\bigcup_{i=1}^{n+1}A_i\right)
+> \mathbb{P}\left(\bigcup_{i=1}^{n+1}A_i\right)
 > &=
-> \sum_{i=1}^{n}P(A_i)
-> -\sum_{1\le i<j\le n}P(A_i\cap A_j)
+> \sum_{i=1}^{n}\mathbb{P}(A_i)
+> -\sum_{1\le i<j\le n}\mathbb{P}(A_i\cap A_j)
 > +\cdots
-> +(-1)^{n+1}P(A_1\cap\cdots\cap A_n)\\
+> +(-1)^{n+1}\mathbb{P}(A_1\cap\cdots\cap A_n)\\
 > &\qquad
-> +P(A_{n+1})
-> -P\left(\bigcup_{i=1}^{n}B_i\right),
+> +\mathbb{P}(A_{n+1})
+> -\mathbb{P}\left(\bigcup_{i=1}^{n}B_i\right),
 > \end{aligned}
 > $$
 >
@@ -674,26 +641,26 @@ Neka je $n\in\mathbb N$ i $A_1,\ldots,A_n\in\mathcal F$. Tada
 > Na događaje $B_1,\ldots,B_n$ ponovno primijenimo pretpostavku indukcije:
 >
 > $$
-> P\left(\bigcup_{i=1}^{n}B_i\right)
+> \mathbb{P}\left(\bigcup_{i=1}^{n}B_i\right)
 > =
-> \sum_{i=1}^{n}P(B_i)
-> -\sum_{1\le i<j\le n}P(B_i\cap B_j)
+> \sum_{i=1}^{n}\mathbb{P}(B_i)
+> -\sum_{1\le i<j\le n}\mathbb{P}(B_i\cap B_j)
 > +\cdots
-> +(-1)^{n+1}P(B_1\cap\cdots\cap B_n).
+> +(-1)^{n+1}\mathbb{P}(B_1\cap\cdots\cap B_n).
 > $$
 >
 > Po definiciji $B_i=A_i\cap A_{n+1}$, pa
 >
 > $$
 > \begin{aligned}
-> P\left(\bigcup_{i=1}^{n}B_i\right)
+> \mathbb{P}\left(\bigcup_{i=1}^{n}B_i\right)
 > &=
-> \sum_{i=1}^{n}P(A_i\cap A_{n+1})\\
+> \sum_{i=1}^{n}\mathbb{P}(A_i\cap A_{n+1})\\
 > &\quad-
 > \sum_{1\le i<j\le n}
-> P(A_i\cap A_j\cap A_{n+1})\\
+> \mathbb{P}(A_i\cap A_j\cap A_{n+1})\\
 > &\quad+\cdots
-> +(-1)^{n+1}P(A_1\cap\cdots\cap A_n\cap A_{n+1}).
+> +(-1)^{n+1}\mathbb{P}(A_1\cap\cdots\cap A_n\cap A_{n+1}).
 > \end{aligned}
 > $$
 >
@@ -701,22 +668,22 @@ Neka je $n\in\mathbb N$ i $A_1,\ldots,A_n\in\mathcal F$. Tada
 >
 > $$
 > \begin{aligned}
-> P\left(\bigcup_{i=1}^{n+1}A_i\right)
+> \mathbb{P}\left(\bigcup_{i=1}^{n+1}A_i\right)
 > &=
-> \sum_{i=1}^{n}P(A_i)+P(A_{n+1})\\
+> \sum_{i=1}^{n}\mathbb{P}(A_i)+\mathbb{P}(A_{n+1})\\
 > &\quad-
 > \left[
-> \sum_{1\le i<j\le n}P(A_i\cap A_j)
+> \sum_{1\le i<j\le n}\mathbb{P}(A_i\cap A_j)
 > +
-> \sum_{i=1}^{n}P(A_i\cap A_{n+1})
+> \sum_{i=1}^{n}\mathbb{P}(A_i\cap A_{n+1})
 > \right]\\
 > &\quad+\cdots
-> +(-1)^{n+2}P(A_1\cap\cdots\cap A_{n+1})\\
+> +(-1)^{n+2}\mathbb{P}(A_1\cap\cdots\cap A_{n+1})\\
 > &=
-> \sum_{i=1}^{n+1}P(A_i)
-> -\sum_{1\le i<j\le n+1}P(A_i\cap A_j)
+> \sum_{i=1}^{n+1}\mathbb{P}(A_i)
+> -\sum_{1\le i<j\le n+1}\mathbb{P}(A_i\cap A_j)
 > +\cdots
-> +(-1)^{n+2}P(A_1\cap\cdots\cap A_{n+1}).
+> +(-1)^{n+2}\mathbb{P}(A_1\cap\cdots\cap A_{n+1}).
 > \end{aligned}
 > $$
 >
@@ -724,59 +691,54 @@ Neka je $n\in\mathbb N$ i $A_1,\ldots,A_n\in\mathcal F$. Tada
 >**Raspis s tročlanim presjecima**
 > $$
 > \begin{aligned}
-> P\left(\bigcup_{i=1}^{n+1}A_i\right)
+> \mathbb{P}\left(\bigcup_{i=1}^{n+1}A_i\right)
 > &=
-> \sum_{i=1}^{n}P(A_i)+P(A_{n+1})\\
+> \sum_{i=1}^{n}\mathbb{P}(A_i)+\mathbb{P}(A_{n+1})\\
 > &\quad-
 > \left[
-> \sum_{1\le i<j\le n}P(A_i\cap A_j)
+> \sum_{1\le i<j\le n}\mathbb{P}(A_i\cap A_j)
 > +
-> \sum_{i=1}^{n}P(A_i\cap A_{n+1})
+> \sum_{i=1}^{n}\mathbb{P}(A_i\cap A_{n+1})
 > \right]\\
 > &\quad+
 > \left[
-> \sum_{1\le i<j<k\le n}P(A_i\cap A_j\cap A_k)
+> \sum_{1\le i<j<k\le n}\mathbb{P}(A_i\cap A_j\cap A_k)
 > +
-> \sum_{1\le i<j\le n}P(A_i\cap A_j\cap A_{n+1})
+> \sum_{1\le i<j\le n}\mathbb{P}(A_i\cap A_j\cap A_{n+1})
 > \right]\\
 > &\quad+\cdots
-> +(-1)^{n+2}P(A_1\cap\cdots\cap A_{n+1})\\
+> +(-1)^{n+2}\mathbb{P}(A_1\cap\cdots\cap A_{n+1})\\
 > &=
-> \sum_{i=1}^{n+1}P(A_i)
-> -\sum_{1\le i<j\le n+1}P(A_i\cap A_j)
-> +\sum_{1\le i<j<k\le n+1}P(A_i\cap A_j\cap A_k)
+> \sum_{i=1}^{n+1}\mathbb{P}(A_i)
+> -\sum_{1\le i<j\le n+1}\mathbb{P}(A_i\cap A_j)
+> +\sum_{1\le i<j<k\le n+1}\mathbb{P}(A_i\cap A_j\cap A_k)
 > +\cdots
-> +(-1)^{n+2}P(A_1\cap\cdots\cap A_{n+1}).
+> +(-1)^{n+2}\mathbb{P}(A_1\cap\cdots\cap A_{n+1}).
 > \end{aligned}
 > $$
 
-
-# Nizovi događaja
-## Subaditivnost
+## Nizovi događaja
+### Subaditivnost
 
 Neka je $(A_j)_{j\in\mathbb N}$ niz događaja iz $\mathcal F$. Tada vrijedi
 
 >[!istaknuto] $\sigma$-subaditivnost
 >$$
->P\left(\bigcup_{j=1}^{\infty} A_j\right)
+>\mathbb{P}\left(\bigcup_{j=1}^{\infty} A_j\right)
 >\le
->\sum_{j=1}^{\infty} P(A_j).
+>\sum_{j=1}^{\infty} \mathbb{P}(A_j).
 >$$
-
-To svojstvo nazivamo **$\sigma$-subaditivnost**.
 
 Specijalno, za svaki $n\in\mathbb N$ vrijedi
 
->[!istaknuto] konačna subaditivnost
+>[!istaknuto] Konačna subaditivnost
 >$$
->P\left(\bigcup_{j=1}^{n} A_j\right)
+>\mathbb{P}\left(\bigcup_{j=1}^{n} A_j\right)
 >\le
->\sum_{j=1}^{n} P(A_j).
+>\sum_{j=1}^{n} \mathbb{P}(A_j).
 >$$
 
-To svojstvo nazivamo **konačna subaditivnost**.
-
-> [!dokaz]- Dokaz.
+> [!dokaz]- Dokaz
 > Definiramo novi niz $(B_j)_{j\in\mathbb N}$ po parovima disjunktnih događaja. Ideja je da iz svakog događaja $A_j$ uklonimo sve dijelove koji su se već pojavili u prethodnim događajima.
 >
 > Stavimo
@@ -844,22 +806,18 @@ To svojstvo nazivamo **konačna subaditivnost**.
 >
 > $$
 > \begin{aligned}
-> P\left(\bigcup_{j=1}^{\infty}A_j\right)
+> \mathbb{P}\left(\bigcup_{j=1}^{\infty}A_j\right)
 > &\overset{(a)}{=}
-> P\left(\bigcup_{j=1}^{\infty}B_j\right)\\
+> \mathbb{P}\left(\bigcup_{j=1}^{\infty}B_j\right)\\
 > &\overset{(c)}{=}
-> \sum_{j=1}^{\infty}P(B_j)\\
+> \sum_{j=1}^{\infty}\mathbb{P}(B_j)\\
 > &\overset{(b)}{\le}
-> \sum_{j=1}^{\infty}P(A_j).
+> \sum_{j=1}^{\infty}\mathbb{P}(A_j).
 > \end{aligned}
 > $$
 > Time je dokazana $\sigma$-subaditivnost. Konačna subaditivnost dokazuje se potpuno analogno, koristeći konačnu aditivnost.
->
->**Skica konstrukcije niza $(B_j)_{j \in \mathbb{N}}$**
->![](file:///home/martin/Documents/Obsidian/Martin/90%20Attachments/prop118.png.png)
 
-
-## Neprekidnost vjerojatnosti
+### Neprekidnost vjerojatnosti
 
 > [!definicija] Rastući i padajući niz događaja
 > Za niz događaja $A_1,A_2,\ldots\in\mathcal F$ kažemo da je
@@ -868,7 +826,7 @@ To svojstvo nazivamo **konačna subaditivnost**.
 > - **padajući** ako je $A_{n+1}\subseteq A_n$ za sve $n\in\mathbb N$.
 
 
-(a) Ako je niz $A_1,A_2,\ldots\in\mathcal F$ rastući, vrijedi
+**(a)** Ako je niz $A_1,A_2,\ldots\in\mathcal F$ rastući, vrijedi
 
 > [!bitnatvrdnja] neprekidnost, rastući
 > $$
@@ -877,7 +835,7 @@ To svojstvo nazivamo **konačna subaditivnost**.
 > \lim_{n\to\infty}\mathbb{P}(A_n).
 > $$
 
-(b) Ako je niz $A_1,A_2,\ldots\in\mathcal F$ padajući, vrijedi
+**(b)** Ako je niz $A_1,A_2,\ldots\in\mathcal F$ padajući, vrijedi
 
 > [!bitnatvrdnja] neprekidnost, padajući
 > $$
@@ -887,7 +845,7 @@ To svojstvo nazivamo **konačna subaditivnost**.
 > $$
 
 > [!dokaz]- Dokaz.
-> **(a)** Konstruiramo niz $B_1,B_2,\ldots\in\mathcal F$ kao u Propoziciji 1.18.
+> **(a)** Konstruiramo niz $B_1,B_2,\ldots\in\mathcal F$ kao u dokazu subaditivnosti.
 >
 > Stavimo
 >
@@ -968,55 +926,3 @@ To svojstvo nazivamo **konačna subaditivnost**.
 > \lim_{n\to\infty}\mathbb{P}(A_n).
 > $$
 
-
-
-## Vjerojatnosni prostor za beskonačan niz bacanja novčića
-
-
-> [!istaknuto] Beskonačan niz bacanja novčića
-> $$
-> \Omega
-> =
-> \{\omega=(\omega_1,\omega_2,\ldots):\omega_i=P\text{ ili }G,\ i\in\mathbb N\}
-> =
-> \{P,G\}^{\mathbb N}.
-> $$
->
-> Elementarni događaji su svi beskonačni nizovi simbola $P$ i $G$.
-> $\Omega$ je skup svih mogućih beskonačnih nizova pisama i glava.
-
-
-Uočimo da je $\Omega$ **neprebrojiv** skup!
-=> nije dovoljno zadati $\mathbb(P)(\omega)$ za svaki niz $\omega$
-
-Motivacija za uvođenje beskonačnog niza bacanja novčića je mogućnost preciznog opisivanja događaja koji ovise o proizvoljno velikom broju bacanja.
-
-Kažemo da događaj $A$ **ovisi o prvih $n$ bacanja** ako za odluku je li se $A$ dogodio trebamo pogledati samo prvih $n$ rezultata; sve nakon toga je nebitno. 
-Na primjer, neka je 
-$$ A=\{\text{točno jedno pismo u prva 3 bacanja}\}. $$Tada $A$ ovisi o prva 3 bacanja jer nakon što znamo prva tri rezultata, odmah znamo je li se $A$ dogodio. Povoljni početci su $$ PGG,\qquad GPG,\qquad GGP. $$ Nakon toga može slijediti bilo što. 
-Formalni zapis $$ A=\{(a_1,a_2,\ldots)\in\Omega:(a_1,\ldots,a_n)\in A_n\} $$
-znači: pogledamo prvih $n$ simbola; ako taj početak pripada skupu dopuštenih početaka $A_n$, cijeli beskonačni niz pripada događaju $A$.
-
-Ako je $A_n=\{\text{u }n\text{-tom bacanju palo je pismo}\}$, tada
-
-$$
-A_1\cup A_2\cup A_3
-$$
-
-predstavlja događaj da je pismo palo barem jednom u prva tri bacanja.
-
-S druge strane,
-
-$$
-A_1^c\cap A_2^c\cap A_3^c
-$$
-
-predstavlja događaj da u prva tri bacanja nije palo nijedno pismo.
-
-Analogno,
-
-$$
-\bigcap_{n=1}^{\infty}A_n^c
-$$
-
-predstavlja događaj da pismo nije palo ni u jednom bacanju.
