@@ -92,7 +92,7 @@ Za $A,B\in\mathcal F$:
 > \bigcap_{j=1}^{\infty}A_j\in\mathcal F.
 > $$
 
-> [!dokaz]- Dokaz
+> [!dokaz]- Dokaz.
 > **(a)**
 >
 > $$
@@ -368,7 +368,7 @@ $$
 > P(A)+P(B)-P(A\cap B).
 > $$
 
-> [!dokaz]- Dokaz
+> [!dokaz]- Dokaz.
 > **(a)** Neka je
 >
 > $$
@@ -614,7 +614,7 @@ Neka je $n\in\mathbb N$ i $A_1,\ldots,A_n\in\mathcal F$. Tada
 >+(-1)^{n+1}P(A_1\cap\cdots\cap A_n).
 >$$
 
-> [!dokaz]- Dokaz
+> [!dokaz]- Dokaz.
 > Dokazujemo indukcijom po $n$.
 >
 > Za $n=1$:
@@ -776,7 +776,7 @@ Specijalno, za svaki $n\in\mathbb N$ vrijedi
 
 To svojstvo nazivamo **konačna subaditivnost**.
 
-> [!dokaz]- Dokaz
+> [!dokaz]- Dokaz.
 > Definiramo novi niz $(B_j)_{j\in\mathbb N}$ po parovima disjunktnih događaja. Ideja je da iz svakog događaja $A_j$ uklonimo sve dijelove koji su se već pojavili u prethodnim događajima.
 >
 > Stavimo
@@ -872,21 +872,21 @@ To svojstvo nazivamo **konačna subaditivnost**.
 
 > [!bitnatvrdnja] neprekidnost, rastući
 > $$
-> P\left(\bigcup_{j=1}^{\infty}A_j\right)
+> \mathbb{P}\left(\bigcup_{j=1}^{\infty}A_j\right)
 > =
-> \lim_{n\to\infty}P(A_n).
+> \lim_{n\to\infty}\mathbb{P}(A_n).
 > $$
 
 (b) Ako je niz $A_1,A_2,\ldots\in\mathcal F$ padajući, vrijedi
 
 > [!bitnatvrdnja] neprekidnost, padajući
 > $$
-> P\left(\bigcap_{j=1}^{\infty}A_j\right)
+> \mathbb{P}\left(\bigcap_{j=1}^{\infty}A_j\right)
 > =
-> \lim_{n\to\infty}P(A_n).
+> \lim_{n\to\infty}\mathbb{P}(A_n).
 > $$
 
-> [!dokaz]- Dokaz
+> [!dokaz]- Dokaz.
 > **(a)** Konstruiramo niz $B_1,B_2,\ldots\in\mathcal F$ kao u Propoziciji 1.18.
 >
 > Stavimo
@@ -919,17 +919,17 @@ To svojstvo nazivamo **konačna subaditivnost**.
 >
 > $$
 > \begin{aligned}
-> P\left(\bigcup_{j=1}^{\infty}A_j\right)
+> \mathbb{P}\left(\bigcup_{j=1}^{\infty}A_j\right)
 > &=
-> P\left(\bigcup_{j=1}^{\infty}B_j\right)
+> \mathbb{P}\left(\bigcup_{j=1}^{\infty}B_j\right)
 > =
-> \sum_{j=1}^{\infty}P(B_j)\\
+> \sum_{j=1}^{\infty}\mathbb{P}(B_j)\\
 > &=
-> \lim_{n\to\infty}\sum_{j=1}^{n}P(B_j)\\
+> \lim_{n\to\infty}\sum_{j=1}^{n}\mathbb{P}(B_j)\\
 > &=
-> \lim_{n\to\infty}P\left(\bigcup_{j=1}^{n}B_j\right)\\
+> \lim_{n\to\infty}\mathbb{P}\left(\bigcup_{j=1}^{n}B_j\right)\\
 > &=
-> \lim_{n\to\infty}P(A_n).
+> \lim_{n\to\infty}\mathbb{P}(A_n).
 > \end{aligned}
 > $$
 > **(b)** Budući da je niz $(A_n)_{n\in\mathbb N}$ padajući, niz $(A_n^c)_{n\in\mathbb N}$ je rastući.
@@ -937,35 +937,35 @@ To svojstvo nazivamo **konačna subaditivnost**.
 > Po (a) vrijedi
 >
 > $$
-> P\left(\bigcup_{j=1}^{\infty}A_j^c\right)
+> \mathbb{P}\left(\bigcup_{j=1}^{\infty}A_j^c\right)
 > =
-> \lim_{n\to\infty}P(A_n^c).
+> \lim_{n\to\infty}\mathbb{P}(A_n^c).
 > $$
 >
 > Po De Morganovom zakonu i svojstvu komplementa,
 >
 > $$
 > \begin{aligned}
-> 1-P\left(\bigcap_{j=1}^{\infty}A_j\right)
+> 1-\mathbb{P}\left(\bigcap_{j=1}^{\infty}A_j\right)
 > &=
-> P\left(\left(\bigcap_{j=1}^{\infty}A_j\right)^c\right)\\
+> \mathbb{P}\left(\left(\bigcap_{j=1}^{\infty}A_j\right)^c\right)\\
 > &=
-> P\left(\bigcup_{j=1}^{\infty}A_j^c\right)\\
+> \mathbb{P}\left(\bigcup_{j=1}^{\infty}A_j^c\right)\\
 > &=
-> \lim_{n\to\infty}P(A_n^c)\\
+> \lim_{n\to\infty}\mathbb{P}(A_n^c)\\
 > &=
-> \lim_{n\to\infty}\left(1-P(A_n)\right)\\
+> \lim_{n\to\infty}\left(1-\mathbb{P}(A_n)\right)\\
 > &=
-> 1-\lim_{n\to\infty}P(A_n).
+> 1-\lim_{n\to\infty}\mathbb{P}(A_n).
 > \end{aligned}
 > $$
 >
 > Dakle,
 >
 > $$
-> P\left(\bigcap_{j=1}^{\infty}A_j\right)
+> \mathbb{P}\left(\bigcap_{j=1}^{\infty}A_j\right)
 > =
-> \lim_{n\to\infty}P(A_n).
+> \lim_{n\to\infty}\mathbb{P}(A_n).
 > $$
 
 
@@ -987,28 +987,14 @@ To svojstvo nazivamo **konačna subaditivnost**.
 
 
 Uočimo da je $\Omega$ **neprebrojiv** skup!
-
 => nije dovoljno zadati $\mathbb(P)(\omega)$ za svaki niz $\omega$
 
 Motivacija za uvođenje beskonačnog niza bacanja novčića je mogućnost preciznog opisivanja događaja koji ovise o proizvoljno velikom broju bacanja.
 
 Kažemo da događaj $A$ **ovisi o prvih $n$ bacanja** ako za odluku je li se $A$ dogodio trebamo pogledati samo prvih $n$ rezultata; sve nakon toga je nebitno. 
-
 Na primjer, neka je 
-$$ A=\{\text{točno jedno pismo u prva 3 bacanja}\}. $$
-
-Tada $A$ ovisi o prva 3 bacanja jer nakon što znamo prva tri rezultata, odmah znamo je li se $A$ dogodio. 
-
-Povoljni početci su 
-
-$$ PGG,\qquad GPG,\qquad GGP. $$ 
-
-Nakon toga može slijediti bilo što. 
-
-Formalni zapis 
-
-$$ A=\{(a_1,a_2,\ldots)\in\Omega:(a_1,\ldots,a_n)\in A_n\} $$
-
+$$ A=\{\text{točno jedno pismo u prva 3 bacanja}\}. $$Tada $A$ ovisi o prva 3 bacanja jer nakon što znamo prva tri rezultata, odmah znamo je li se $A$ dogodio. Povoljni početci su $$ PGG,\qquad GPG,\qquad GGP. $$ Nakon toga može slijediti bilo što. 
+Formalni zapis $$ A=\{(a_1,a_2,\ldots)\in\Omega:(a_1,\ldots,a_n)\in A_n\} $$
 znači: pogledamo prvih $n$ simbola; ako taj početak pripada skupu dopuštenih početaka $A_n$, cijeli beskonačni niz pripada događaju $A$.
 
 Ako je $A_n=\{\text{u }n\text{-tom bacanju palo je pismo}\}$, tada
