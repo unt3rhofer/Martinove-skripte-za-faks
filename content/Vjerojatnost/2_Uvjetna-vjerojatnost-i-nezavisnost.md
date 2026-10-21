@@ -1,7 +1,8 @@
 ---
-title: 2 Uvjetna vjerojatnost i nezavisnost
+title: 2 Uvjetna verojatnost i nezavisnost
 ---
-# Uvjetna vjerojatnost
+## Uvjetna vjerojatnost
+
 Bacamo dvije kocke, dakle
 
 $$
@@ -17,7 +18,7 @@ $$
 imamo
 
 $$
-P(A)
+\mathbb{P}(A)
 =
 \frac{|A|}{|\Omega|}
 =
@@ -40,7 +41,7 @@ $\Rightarrow$ sada $B$ postaje „novi” $\Omega$ te su opet svi događaji jedn
 
 $$
 \begin{aligned}
-P(A\mid B)
+\mathbb{P}(A\mid B)
 &:= \text{„uvjetna vjerojatnost od } A \text{ uz dano } B\text{”}\\
 &=
 \frac{|\{(2,2)\}|}{|B|}
@@ -50,7 +51,7 @@ P(A\mid B)
 >
 \frac{1}{12}
 =
-P(A)
+\mathbb{P}(A)
 \right).
 \end{aligned}
 $$
@@ -58,14 +59,15 @@ $$
 Uočimo, vrijedi
 
 $$
-P(A\mid B)
+\mathbb{P}(A\mid B)
 =
 \frac{|A\cap B|}{|B|}
 =
 \frac{|A\cap B|/|\Omega|}{|B|/|\Omega|}
 =
-\frac{P(A\cap B)}{P(B)}.
+\frac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)}.
 $$
+
 
 
 > [!definicija] Uvjetna vjerojatnost
@@ -79,16 +81,63 @@ $$
 > Vrijedi
 >
 > $$
-> P(A\cap B)=P(A\mid B)P(B).
+> \mathbb{P}((A\cap B)=P(A\mid B)\mathbb{P}((B).
+> $$
+
+Neka je $(\Omega,\mathcal F,\mathbb P)$ vjerojatnosni prostor i $C\in\mathcal F$ takav da je $\mathbb P(C)>0$. Tada je funkcija
+
+$$
+\mathbb P_C(A):= \mathbb{P}(A \mid C) = \frac{\mathbb P(A\cap C)}{\mathbb P(C)},\qquad A\in\mathcal F,
+$$
+
+**vjerojatnost na $(\Omega,\mathcal F)$**, odnosno $(\Omega,\mathcal F,\mathbb P_C)$ je vjerojatnosni prostor.
+
+> [!dokaz]- Dokaz.
+> **(i) Nenegativnost**
+>
+> Za svaki $A\in\mathcal F$ vrijedi
+>
+> $$
+> \mathbb P_C(A)=\frac{\mathbb P(A\cap C)}{\mathbb P(C)}\ge 0,
 > $$
 >
-Ako je $P(B)=0$, $P(A\mid B)$ nije definirana, ali svejedno koristimo $P(A\cap B)=P(A\mid B)P(B)$
+> jer je $\mathbb P$ nenegativna i $\mathbb P(C)>0$.
+>
+> **(ii) Normiranost**
+>
+> Budući da je $\Omega\cap C=C$, vrijedi
+>
+> $$
+> \mathbb P_C(\Omega)
+> =\frac{\mathbb P(\Omega\cap C)}{\mathbb P(C)}
+> =\frac{\mathbb P(C)}{\mathbb P(C)}
+> =1.
+> $$
+>
+> **(iii) $\sigma$-aditivnost**
+>
+> Neka je $(A_n)_{n\in\mathbb N}$ niz u parovima disjunktnih događaja iz $\mathcal F$. Tada je i niz $(A_n\cap C)_{n\in\mathbb N}$ u parovima disjunktan pa, koristeći $\sigma$-aditivnost od $\mathbb P$, dobivamo
+>
+> $$
+> \begin{aligned}
+> \mathbb P_C\left(\bigcup_{n=1}^{\infty}A_n\right)
+> &=\frac{\mathbb P\left(\bigcup_{n=1}^{\infty}(A_n\cap C)\right)}{\mathbb P(C)}\\
+> &=\frac{\sum_{n=1}^{\infty}\mathbb P(A_n\cap C)}{\mathbb P(C)}\\
+> &=\sum_{n=1}^{\infty}\mathbb P_C(A_n).
+> \end{aligned}
+> $$
+>
+> Time su provjerena sva tri aksioma vjerojatnosti.
+
+Ako je $\mathbb{P}(B)=0$, $\mathbb{P}(A\mid B)$ nije definirana, ali svejedno koristimo $\mathbb{P}(A\cap B)=\mathbb{P}(A\mid B)\mathbb{P}(B)$
 tj. u tom slučaju definiramo
 
 $$
-P(A\mid B)P(B):=0\;(=P(A\cap B)).
+\mathbb{P}(A\mid B)\mathbb{P}(B):=0\;(=\mathbb{P}(A\cap B)).
 $$
-## Formula potpune vjerojatnosti (FPV)
+
+### Formula potpune vjerojatnosti (FPV)
+
 > [!definicija] Potpun sistem događaja (PSD)
 > Konačna ili prebrojiva familija događaja $(H_i)_{i\in I}$, gdje je
 >
@@ -112,43 +161,45 @@ $$
 > $$
 > \bigcup_{i\in I}H_i=\Omega.
 > $$
+
 > [!bitnatvrdnja] Formula potpune vjerojatnosti (FPV)
 > Za sve $A\in\mathcal F$ i bilo koji potpun sistem događaja $(H_i)_{i\in I}$ vrijedi
 >
 > $$
-> P(A)
+> \mathbb{P}(A)
 > =
-> \sum_{i\in I} P(A\mid H_i)P(H_i).
+> \sum_{i\in I} \mathbb{P}(A\mid H_i)\mathbb{P}(H_i).
 > $$
 
-> [!dokaz]- Dokaz
+> [!dokaz]- Dokaz.
 > Budući da je $A\subseteq\Omega$, imamo
 >
 > $$
 > \begin{aligned}
-> P(A)
+> \mathbb{P}(A)
 > &=
-> P(A\cap\Omega)\\
+> \mathbb{P}(A\cap\Omega)\\
 > &=
-> P\left(
+> \mathbb{P}\left(
 > A\cap\left(\bigcup_{i\in I}H_i\right)
 > \right)\\
 > &=
-> P\left(
+> \mathbb{P}\left(
 > \bigcup_{i\in I}(A\cap H_i)
 > \right)\\
 > &\underset{\text{(jer su }H_i\text{ u parovima disjunktni)}}{=}
-> \sum_{i\in I}P(A\cap H_i)\\
+> \sum_{i\in I}\mathbb{P}(A\cap H_i)\\
 > &=
-> \sum_{i\in I}P(A\mid H_i)P(H_i).
+> \sum_{i\in I}\mathbb{P}(A\mid H_i)\mathbb{P}(H_i).
 > \end{aligned}
 > $$
 >
 > Četvrta jednakost slijedi iz konačne/$\sigma$-aditivnosti, a zadnja iz
 >
 > $$
-> P(A\cap B)=P(A\mid B)P(B).
+> \mathbb{P}(A\cap B)=\mathbb{P}(A\mid B)\mathbb{P}(B).
 > $$
+
 
 Za fiksan $A\in\mathcal F$, za formulu potpune vjerojatnosti
 
@@ -178,59 +229,61 @@ $$
 $$
 
 > [!bitnatvrdnja] Bayesova formula
-> Ako je $A\in\mathcal F$ takav da je $P(A)>0$ te je $(H_i)_{i\in I}$ potpun sistem događaja, za sve $j\in I$ vrijedi
+> Ako je $A\in\mathcal F$ takav da je $\mathbb{P}((A)>0$ te je $(H_i)_{i\in I}$ potpun sistem događaja, za sve $j\in I$ vrijedi
 > $$
-> P(H_j\mid A)
+> \mathbb{P}(H_j\mid A)
 > =
-> \frac{P(A\mid H_j)P(H_j)}{P(A)}
+> \frac{\mathbb{P}(A\mid H_j)\mathbb{P}(H_j)}{P(A)}
 > =
-> \frac{P(A\mid H_j)P(H_j)}
-> {\displaystyle\sum_{i\in I}P(A\mid H_i)P(H_i)}.
+> \frac{\mathbb{P}(A\mid H_j)\mathbb{P}(H_j)}
+> {\displaystyle\sum_{i\in I}\mathbb{P}(A\mid H_i)\mathbb{P}(H_i)}.
 > $$
 
-> [!dokaz]- Dokaz
+> [!dokaz]- Dokaz.
 > Po definiciji uvjetne vjerojatnosti,
 >
 > $$
-> P(H_j\mid A)
+> \mathbb{P}(H_j\mid A)
 > =
-> \frac{P(H_j\cap A)}{P(A)}.
+> \frac{\mathbb{P}(H_j\cap A)}{\mathbb{P}(A)}.
 > $$
 >
 > Budući da
 >
 > $$
-> P(H_j\cap A)
+> \mathbb{P}(H_j\cap A)
 > =
-> P(A\mid H_j)P(H_j),
+> \mathbb{P}(A\mid H_j)\mathbb{\mathbb{P}}(H_j),
 > $$
 >
 > slijedi
 >
 > $$
-> P(H_j\mid A)
+> \mathbb{P}(H_j\mid A)
 > =
-> \frac{P(A\mid H_j)P(H_j)}{P(A)}.
+> \frac{\mathbb{P}(A\mid H_j)\mathbb{P}(H_j)}{\mathbb{P}(A)}.
 > $$
 >
 > Po formuli potpune vjerojatnosti,
 >
 > $$
-> P(A)
+> \mathbb{P}(A)
 > =
-> \sum_{i\in I}P(A\mid H_i)P(H_i).
+> \sum_{i\in I}\mathbb{P}(A\mid H_i)\mathbb{P}(H_i).
 > $$
 >
 > Uvrštavanjem dobivamo
 >
 > $$
-> P(H_j\mid A)
+> \mathbb{P}(H_j\mid A)
 > =
-> \frac{P(A\mid H_j)P(H_j)}
-> {\displaystyle\sum_{i\in I}P(A\mid H_i)P(H_i)}.
+> \frac{\mathbb{P}(A\mid H_j)\mathbb{P}(H_j)}
+> {\displaystyle\sum_{i\in I}\mathbb{P}(A\mid H_i)\mathbb{P}(H_i)}.
 > $$
 
+
 ### Ostala svojstva uvjetne vjerojatnosti
+
 > [!istaknuto] Vjerojatnost presjeka $n$ događaja
 > Neka su $A_j\in\mathcal F$, $j=1,\ldots,n$, takvi da je
 >
@@ -253,7 +306,7 @@ $$
 > \end{aligned}
 > $$
 
-> [!dokaz]- Dokaz
+> [!dokaz]- Dokaz.
 > Raspisujemo desnu stranu po definiciji uvjetne vjerojatnosti:
 >
 > $$
@@ -302,128 +355,116 @@ $$
 > Time je tvrdnja dokazana.
 
 
-# Nezavisnost
+
+## Nezavisnost
+
 > [!definicija] Nezavisnost događaja
 > **(i)** Događaji $A,B\in\mathcal F$ su **nezavisni** ako vrijedi
 >
 > $$
-> P(A\cap B)=P(A)P(B).
+> \mathbb{P}(A\cap B)=\mathbb{P}(A)\mathbb{P}(B).
 > $$
 >
-> **(ii)** Događaji $A,B\in\mathcal F$ su **uvjetno nezavisni uz dani $C\in\mathcal F$**, $P(C)>0$, ako vrijedi
+> **(ii)** Događaji $A,B\in\mathcal F$ su **uvjetno nezavisni uz dani $C\in\mathcal F$**, $\mathbb{P}(C)>0$, ako vrijedi
 >
 > $$
-> P(A\cap B\mid C)
+> \mathbb{P}(A\cap B\mid C)
 > =
-> P(A\mid C)P(B\mid C),
+> \mathbb{P}(A\mid C)\mathbb{P}(B\mid C),
 > $$
 >
-> to jest ako su nezavisni s obzirom na $P_C$.
+> to jest ako su nezavisni s obzirom na $\mathbb{P}_C$.
+
 > [!istaknuto] Karakterizacija nezavisnosti događaja
-> **(i)** Ako je $P(B)>0$ i $A\in\mathcal F$ proizvoljan, nezavisnost događaja $A$ i $B$ je ekvivalentno s
+> **(i)** Ako je $
+\mathbb{P}(B)>0$ i $A\in\mathcal F$ proizvoljan, nezavisnost događaja $A$ i $B$ je ekvivalentno s
 >
 > $$
-> P(A\mid B)=P(A), 
+> \mathbb{P}(A\mid B)=\mathbb{P}(A), 
 > $$
 >
 > što daje intuitivniju definiciju nezavisnosti.
 >
-> **(ii)** Ako je $P(B)=0$ ili $1$, $A$ i $B$ su nezavisni za svaki $A\in\mathcal F$.
+> **(ii)** Ako je $\mathbb{P}(B)=0$ ili $1$, $A$ i $B$ su nezavisni za svaki $A\in\mathcal F$.
 >
-> **(iii)** Ako je $P(B\cap C)>0$ (tj. $P_C(B)>0$) i $A\in\mathcal F$ proizvoljan, nezavisnost $A$ i $B$ uz dano $C$ je ekvivalentno s
+> **(iii)** Ako je $\mathbb{P}(B\cap C)>0$ (tj. $\mathbb{P}_C(B)>0$) i $A\in\mathcal F$ proizvoljan, nezavisnost $A$ i $B$ uz dano $C$ je ekvivalentno s
 >
 > $$
-> P(A\mid B\cap C)=P(A\mid C). 
+> \mathbb{P}(A\mid B\cap C)=\mathbb{P}(A\mid C). 
 > $$
 >
-> **(iv)** Ako je $P(B\mid C)=0$ ili $1$, uvjetna nezavisnost $A$ i $B$ za dani $C$ vrijedi za svaki $A\in\mathcal F$.
+> **(iv)** Ako je $\mathbb{P}(B\mid C)=0$ ili $1$, uvjetna nezavisnost $A$ i $B$ za dani $C$ vrijedi za svaki $A\in\mathcal F$.
 
-> [!dokaz]- Dokaz
+> [!dokaz]- Dokaz.
 > **(i)**
 > Pretpostavimo da su $A$ i $B$ nezavisni, odnosno
 >
 > $$
-> P(A\cap B)=P(A)P(B).
+> \mathbb{P}(A\cap B)=\mathbb{P}(A)\mathbb{P}(B).
 > $$
 >
 > Tada
 >
 > $$
-> P(A\mid B)
+> \mathbb{P}(A\mid B)
 > =
-> \frac{P(A\cap B)}{P(B)}
+> \frac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)}
 > =
-> \frac{P(A)\cancel{P(B)}}{\cancel{P(B)}}
+> \frac{\mathbb{P}(A)\cancel{\mathbb{P}(B)}}{\cancel{\mathbb{P}(B)}}
 > =
-> P(A).
+> \mathbb{P}(A).
 > $$
 >
 > Obratno, pretpostavimo da vrijedi
 >
 > $$
-> P(A\mid B)=P(A).
+> \mathbb{P}(A\mid B)=\mathbb{P}(A).
 > $$
 >
 > Tada
 >
 > $$
-> P(A)
+> \mathbb{P}(A)
 > =
-> \frac{P(A\cap B)}{P(B)}
+> \frac{\mathbb{P}(A\cap B)}{\mathbb{P}(B)}
 > \implies
-> P(A)P(B)=P(A\cap B),
+> \mathbb{P}(A)\mathbb{P}(B)=\mathbb{P}(A\cap B),
 > $$
 >
 > pa su $A$ i $B$ nezavisni.
 > **(ii)**
-> Ako je $P(B)=0$, budući da je $A\cap B\subseteq B$, po monotonosti vrijedi
+> **Slučaj $\mathbb{P}(B)=0$:**
+>
+> Budući da je $A\cap B\subseteq B$, vrijedi
 >
 > $$
-> 0\leq P(A\cap B)\leq P(B)=0,
+> 0\le \mathbb{P}(A\cap B)\le \mathbb{P}(B)=0.
 > $$
 >
-> pa je
+> Dakle,
 >
 > $$
-> P(A\cap B)=0=P(A)P(B).
+> \mathbb{P}(A\cap B)=0=\mathbb{P}(A)\mathbb{P}(B).
 > $$
 >
-> Ako je $P(B)=1$, tada je
+> **Slučaj $\mathbb{P}(B)=1$:**
+>
+> Tada je $\mathbb{P}(B^c)=0$, pa vrijedi
 >
 > $$
-> P(B^c)=1-P(B)=0.
+> \begin{aligned}
+> \mathbb{P}(A\cap B)
+> &=1-\mathbb{P}((A\cap B)^c)\\
+> &=1-\mathbb{P}(A^c\cup B^c)\\
+> &=1-\left[\mathbb{P}(A^c)+\mathbb{P}(B^c)-\mathbb{P}(A^c\cap B^c)\right]\\
+> &=1-\mathbb{P}(A^c)-0+0\\
+> &=\mathbb{P}(A)\\
+> &=\mathbb{P}(A)\cdot 1\\
+> &=\mathbb{P}(A)\mathbb{P}(B).
+> \end{aligned}
 > $$
->
-> Budući da je
->
-> $$
-> A=(A\cap B)\cup(A\cap B^c)
-> $$
->
-> disjunktna unija te je $A\cap B^c\subseteq B^c$, slijedi
->
-> $$
-> P(A\cap B^c)=0.
-> $$
->
-> Zato
->
-> $$
-> P(A)
-> =
-> P(A\cap B)+P(A\cap B^c)
-> =
-> P(A\cap B),
-> $$
->
-> odnosno
->
-> $$
-> P(A\cap B)=P(A)=P(A)P(B).
-> $$
->
-> Dakle, u oba slučaja $A$ i $B$ su nezavisni.
-> **(iii)** i **(iv)** slijede direktno iz **(i)** i **(ii)** kada se primjene na $\mathbb{P}_{C}$
+> **(iii)** i **(iv)** slijede direktno iz **(i)** i **(ii)** kada se primjene na $\mathbb{\mathbb{P}}_{C}$
+
 
 
 Ako su $A,B\in\mathcal F$ nezavisni, onda su nezavisni i parovi događaja:
@@ -433,7 +474,7 @@ A \text{ i } B^c,\qquad
 A^c \text{ i } B^c.
 $$
 
-> [!dokaz]- Dokaz
+> [!dokaz]- Dokaz.
 > Za $A^c$ i $B$ imamo
 >
 > $$
@@ -485,7 +526,8 @@ $$
 >
 > Dakle, $A^c$ i $B^c$ su nezavisni.
 
-## Nezavisnost familije događaja
+
+### Nezavisnost familije događaja
 
 > [!definicija] Nezavisnost familije događaja
 > Familija događaja $(A_i)_{i\in I}$ pri čemu $I$ može biti proizvoljan skup, je
@@ -514,7 +556,7 @@ $$
  2. $P(A\cap B\cap C)=P(A)P(B)P(C)$.
 
 Zašto ne samo 2?
-> [!odgovor]- Odgovor
+> [!odgovor]- Odgovor.
 > Uzmite na primjer $C=\emptyset$, onda bi za sve $A,B$ imali da su $A,B,C$ nezavisni što očito nema smisla.
 
 
@@ -648,3 +690,243 @@ $$
 > $$
 
 Dokaz se ne ispituje.
+
+### Borel-Cantelli leme
+
+> [!bitnatvrdnja] Prva Borel-Cantelli lema
+> Ako za niz događaja $A_1,A_2,\ldots\in\mathcal F$ vrijedi
+>
+> $$
+> \sum_{i=1}^{\infty}P(A_i)<\infty,
+> $$
+>
+> onda je
+>
+> $$
+> P\left(
+> \bigcap_{n=1}^{\infty}
+> \bigcup_{k=n}^{\infty}A_k
+> \right)=0.
+> $$
+
+> [!dokaz]- Dokaz.
+> Stavimo
+>
+> $$
+> B_n:=\bigcup_{k=n}^{\infty}A_k.
+> $$
+>
+> Niz $(B_n)_{n\in\mathbb N}$ je padajući, pa po neprekidnosti vjerojatnosti
+>
+> $$
+> P\left(
+> \bigcap_{n=1}^{\infty}\bigcup_{k=n}^{\infty}A_k
+> \right)
+> =
+> \lim_{n\to\infty}
+> P\left(\bigcup_{k=n}^{\infty}A_k\right).
+> $$
+>
+> Po $\sigma$-subaditivnosti,
+>
+> $$
+> P\left(\bigcup_{k=n}^{\infty}A_k\right)
+> \leq
+> \sum_{k=n}^{\infty}P(A_k).
+> $$
+>
+> Kako je $\sum_{k=1}^{\infty}P(A_k)<\infty$, ostatak konvergentnog reda teži u $0$, pa
+>
+> $$
+> P\left(
+> \bigcap_{n=1}^{\infty}\bigcup_{k=n}^{\infty}A_k
+> \right)=0.
+> $$
+
+ Prva Borel–Cantellijeva lema kaže:
+
+ $$
+ \sum_{i=1}^{\infty} P(A_i) < \infty
+ \implies
+ P\left(
+ \bigcap_{n=1}^{\infty}
+ \bigcup_{k=n}^{\infty} A_k
+ \right)
+ =0.
+ $$
+
+ Događaj
+
+ $$
+ \bigcap_{n=1}^{\infty}
+ \bigcup_{k=n}^{\infty} A_k
+ $$
+
+ znači da se dogodilo **beskonačno mnogo događaja $A_n$**.
+
+ Za svaki fiksni $n$, događaj
+
+ $$
+ \bigcup_{k=n}^{\infty} A_k
+ $$
+
+ znači:
+
+ **dogodio se barem jedan od $A_n,A_{n+1},A_{n+2},\ldots$**
+
+ odnosno, nakon trenutka $n$ dogodio se barem još jedan $A_k$.
+
+ Sada uzimamo presjek po svim $n$:
+
+ $$
+ \bigcap_{n=1}^{\infty}
+ \bigcup_{k=n}^{\infty} A_k.
+ $$
+
+ To znači da prethodna tvrdnja mora vrijediti za svaki $n$:
+
+ - nakon $n=1$ postoji neki $A_k$ koji se dogodio;
+ - nakon $n=10$ postoji neki kasniji $A_k$;
+ - nakon $n=1000$ opet postoji neki kasniji $A_k$;
+ - koliko god daleko otišli u nizu, uvijek se kasnije dogodi još neki $A_k$.
+
+ To je moguće **ako i samo ako se događaji $A_n$ događaju beskonačno mnogo puta**.
+
+ To se skraćeno označava s:
+
+ $$
+ \boxed{A_n \text{ b.m.p.}}
+ $$
+
+
+
+> [!bitnatvrdnja] Druga Borel-Cantelli lema
+> Ako je $A_1,A_2,\ldots\in\mathcal F$ niz nezavisnih događaja takvih da vrijedi
+>
+> $$
+> \sum_{n=1}^{\infty}P(A_n)=\infty,
+> $$
+>
+> onda je
+>
+> $$
+> P(\{A_n\text{ b.m.p.}\})=1.
+> $$
+
+> [!dokaz]- Dokaz.
+> Definirajmo niz događaja $(B_n)_{n\in\mathbb{N}}$ formulom
+>
+> $$
+> B_n=\bigcup_{k=n}^{\infty}A_k.
+> $$
+>
+> To je **padajući niz događaja**, pa po neprekidnosti vjerojatnosti imamo
+>
+> $$
+> \mathbb{P}\left(\bigcap_{n=1}^{\infty}\bigcup_{k=n}^{\infty}A_k\right)
+> =
+> \mathbb{P}\left(\bigcap_{n=1}^{\infty}B_n\right)
+> =
+> \lim_{n\to\infty}\mathbb{P}(B_n).
+> $$
+>
+> Dakle,
+>
+> $$
+> \mathbb{P}\left(\bigcap_{n=1}^{\infty}\bigcup_{k=n}^{\infty}A_k\right)=1
+> \iff
+> \lim_{n\to\infty}\mathbb{P}(B_n)=1.
+> $$
+>
+> Budući da je $(B_n)_n$ padajući niz, vrijedi
+>
+> $$
+> \lim_{n\to\infty}\mathbb{P}(B_n)=1
+> \iff
+> \mathbb{P}(B_n)=1
+> \quad(\forall n\in\mathbb{N}).
+> $$
+>
+> Slijedi
+>
+> $$
+> \mathbb{P}\left(\bigcap_{n=1}^{\infty}\bigcup_{k=n}^{\infty}A_k\right)=1
+> \iff
+> \mathbb{P}(B_n^c)=0
+> \quad(\forall n\in\mathbb{N}).
+> $$
+>
+> Prelazimo na komplement kako bismo u dokazu mogli iskoristiti **nezavisnost događaja $A_k$, odnosno $A_k^c$**.
+>
+> Računamo za proizvoljan fiksan $n\in\mathbb{N}$:
+>
+> $$
+> \begin{aligned}
+> \mathbb{P}(B_n^c)
+> &=\mathbb{P}\left(\left(\bigcup_{k=n}^{\infty}A_k\right)^c\right)\\
+> &=\mathbb{P}\left(\bigcap_{k=n}^{\infty}A_k^c\right)\\
+> &=\prod_{k=n}^{\infty}\mathbb{P}(A_k^c)\\
+> &=\lim_{m\to\infty}\prod_{k=n}^{m}\mathbb{P}(A_k^c)\\
+> &=\lim_{m\to\infty}\prod_{k=n}^{m}(1-\mathbb{P}(A_k)).
+> \end{aligned}
+> $$
+>
+> Iskoristimo činjenicu
+>
+> $$
+> 1-x\le e^{-x},\qquad \forall x\ge 0.
+> $$
+>
+> Dobivamo
+>
+> $$
+> \begin{aligned}
+> \mathbb{P}(B_n^c)
+> &\le \lim_{m\to\infty}\prod_{k=n}^{m}e^{-\mathbb{P}(A_k)}\\
+> &=\lim_{m\to\infty}e^{-\sum_{k=n}^{m}\mathbb{P}(A_k)}\\
+> &=e^{-\lim_{m\to\infty}\sum_{k=n}^{m}\mathbb{P}(A_k)}.
+> \end{aligned}
+> $$
+>
+> Prema pretpostavci,
+>
+> $$
+> \lim_{m\to\infty}\sum_{k=n}^{m}\mathbb{P}(A_k)=\infty.
+> $$
+>
+> Stoga smo dokazali
+>
+> $$
+> \mathbb{P}(B_n^c)\le e^{-\infty}=0.
+> $$
+>
+> Kako je $\mathbb{P}$ nenegativna, vrijedi
+>
+> $$
+> 0\le\mathbb{P}(B_n^c)\le 0
+> \implies
+> \boxed{\mathbb{P}(B_n^c)=0}.
+> $$
+>
+> Time smo dokazali traženu tvrdnju.
+
+Druga Borel–Cantellijeva lema je svojevrsni obrat prve, ali uz **dodatnu pretpostavku nezavisnosti**.
+
+Vrijedi
+
+$$
+\sum_{n=1}^{\infty}P(A_n)=\infty
+\qquad\text{i}\qquad
+(A_n)\text{ nezavisni}
+$$
+
+povlači
+
+$$
+P(\{A_n\text{ b.m.p.}\})=1.
+$$
+
+Dakle:
+
+**Ako su događaji nezavisni i njihove se vjerojatnosti zbrajaju u beskonačno, tada će se gotovo sigurno beskonačno mnogo događaja $A_n$ dogoditi.**
+
